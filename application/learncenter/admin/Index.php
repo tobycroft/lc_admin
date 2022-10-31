@@ -5,7 +5,7 @@ namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
-use app\parentschool\model\UserModel;
+use app\learncenter\model\UserModel;
 use think\Db;
 use think\facade\Hook;
 use util\Tree;

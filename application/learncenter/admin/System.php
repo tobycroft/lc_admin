@@ -4,9 +4,9 @@
 namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
-use app\anymodule\model\ParentModel;
-use app\anymodule\model\SystemParamModel;
 use app\common\builder\ZBuilder;
+use app\learncenter\model\ParentModel;
+use app\learncenter\model\SystemParamModel;
 use app\user\model\Role;
 use think\Db;
 use think\facade\Hook;
