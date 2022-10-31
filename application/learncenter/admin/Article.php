@@ -73,14 +73,6 @@ class Article extends Admin
         // 保存数据
         if ($this->request->isPost()) {
             $data = $this->request->post();
-            // 非超级管理需要验证可选择角色
-            if (session('user_auth.role') != 1) {
-                if ($data['role'] == session('user_auth.role')) {
-                    $this->error('禁止创建与当前角色同级的用户');
-                }
-            }
-
-            $data['roles'] = isset($data['roles']) ? implode(',', $data['roles']) : '';
 
             if ($user = ArticleModel::create($data)) {
                 Hook::listen('user_add', $user);
