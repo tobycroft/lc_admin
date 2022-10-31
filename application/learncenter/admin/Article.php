@@ -1,11 +1,11 @@
 <?php
 
 
-namespace app\parentschool\admin;
+namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
-use app\parentschool\model\ArticleModel;
+use app\learncenter\model\ArticleModel;
 use app\user\model\Role as RoleModel;
 use app\user\model\User;
 use think\Db;
