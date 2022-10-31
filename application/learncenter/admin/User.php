@@ -56,7 +56,7 @@ class User extends Admin
             ->addColumn('phone', '手机号')
             ->addColumn('wx_name', '用户名')
             ->addColumn('wx_img', '头像', 'img_url')
-            ->addColumn('share', '邀请码')
+//            ->addColumn('share', '邀请码')
             ->addColumn('active', '是否启用', "switch")
             ->addColumn('admin', '设为管理员', "switch")
             ->addColumn('change_date', '修改时间')
