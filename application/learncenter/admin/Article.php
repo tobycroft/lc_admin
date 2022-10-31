@@ -46,9 +46,9 @@ class Article extends Admin
             ->setSearch(['id' => 'ID', "pid" => "上级UID", 'username' => '用户名']) // 设置搜索参数
             ->addOrder('id')
             ->addColumn('id', 'ID')
-            ->addColumn('title', 'title', 'textarea.edit')
-            ->addColumn('content', 'content')
-            ->addColumn('img', 'img', 'pic')
+            ->addColumn('title', '标题', 'textarea.edit')
+            ->addColumn('content', '内容')
+            ->addColumn('img', 'img', 'image')
             ->addColumn('bg_color', 'bg_color', 'textarea.edit')
             ->addColumn('show_date', '展示日期', 'text.exit')
             ->addColumn('push_date', '推送日期', "text.edit")
