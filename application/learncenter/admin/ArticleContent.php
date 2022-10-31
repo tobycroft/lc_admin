@@ -49,7 +49,7 @@ class ArticleContent extends Admin
             ->setSearch(['id' => 'ID', "pid" => "上级UID", 'username' => '用户名']) // 设置搜索参数
             ->addOrder('id,aid,rank')
             ->addColumn('id', 'ID')
-            ->addColumn('aid', '文章', '', '', $articles)
+            ->addColumn('aid', '文章', 'select', '', $articles)
             ->addColumn('name', '模块标题')
             ->addColumn('tag', '标签')
             ->addColumn('rank', '排序')
