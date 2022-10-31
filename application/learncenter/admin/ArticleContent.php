@@ -39,6 +39,8 @@ class ArticleContent extends Admin
             ->count();
         $num2 = ArticleContentModel::count();
 
+        $articles = ArticleModel::column("id,title");
+
         return ZBuilder::make('table')
             ->setPageTips("总数量：" . $num2 . "    今日数量：" . $num1, 'danger')
 //            ->setPageTips("总数量：" . $num2, 'danger')
@@ -47,7 +49,7 @@ class ArticleContent extends Admin
             ->setSearch(['id' => 'ID', "pid" => "上级UID", 'username' => '用户名']) // 设置搜索参数
             ->addOrder('id,aid,rank')
             ->addColumn('id', 'ID')
-            ->addColumn('aid', '文章ID')
+            ->addColumn('aid', '文章', '', '', $articles)
             ->addColumn('name', '模块标题')
             ->addColumn('tag', '标签')
             ->addColumn('rank', '排序')
