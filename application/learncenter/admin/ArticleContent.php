@@ -50,7 +50,7 @@ class ArticleContent extends Admin
             ->addColumn('name', '模块标题')
             ->addColumn('tag', '标签')
             ->addColumn('rank', '排序')
-            ->addColumn('type', '类型', 'select', '', ['default' => 'default', 'video' => '视频/合并视频', 'audio' => '音频/合并音频', 'text' => '文章内容'])
+            ->addColumn('type', '类型', 'select', ['default' => 'default', 'video' => '视频/合并视频', 'audio' => '音频/合并音频', 'text' => '文章内容'])
             ->addColumn('title', '标题')
             ->addColumn('content', '内容')
             ->addColumn('url', 'url')
