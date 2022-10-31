@@ -6,8 +6,6 @@ namespace app\learncenter\admin;
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\learncenter\model\ArticleModel;
-use app\user\model\Role as RoleModel;
-use app\user\model\User;
 use think\Db;
 use think\facade\Hook;
 use util\Tree;
@@ -77,17 +75,6 @@ class Article extends Admin
                 if ($data['role'] == session('user_auth.role')) {
                     $this->error('禁止创建与当前角色同级的用户');
                 }
-                $role_list = RoleModel::getChildsId(session('user_auth.role'));
-                if (!in_array($data['role'], $role_list)) {
-                    $this->error('权限不足，禁止创建非法角色的用户');
-                }
-
-                if (isset($data['roles'])) {
-                    $deny_role = array_diff($data['roles'], $role_list);
-                    if ($deny_role) {
-                        $this->error('权限不足，附加角色设置错误');
-                    }
-                }
             }
 
             $data['roles'] = isset($data['roles']) ? implode(',', $data['roles']) : '';
@@ -102,12 +89,6 @@ class Article extends Admin
             }
         }
 
-        // 角色列表
-        if (session('user_auth.role') != 1) {
-            $role_list = RoleModel::getTree(null, false, session('user_auth.role'));
-        } else {
-            $role_list = RoleModel::getTree(null, false);
-        }
 
         // 使用ZBuilder快速创建表单
         return ZBuilder::make('form')
@@ -134,15 +115,6 @@ class Article extends Admin
         if ($id === null)
             $this->error('缺少参数');
 
-        // 非超级管理员检查可编辑用户
-        if (session('user_auth.role') != 1) {
-            $role_list = RoleModel::getChildsId(session('user_auth.role'));
-            $user_list = User::where('role', 'in', $role_list)
-                ->column('id');
-            if (!in_array($id, $user_list)) {
-                $this->error('权限不足，没有可操作的用户');
-            }
-        }
 
         // 保存数据
         if ($this->request->isPost()) {
@@ -195,16 +167,6 @@ class Article extends Admin
     {
         if ($uid === 0)
             $this->error('缺少参数');
-
-        // 非超级管理员检查可编辑用户
-        if (session('user_auth.role') != 1) {
-            $role_list = RoleModel::getChildsId(session('user_auth.role'));
-            $user_list = User::where('role', 'in', $role_list)
-                ->column('id');
-            if (!in_array($uid, $user_list)) {
-                $this->error('权限不足，没有可操作的用户');
-            }
-        }
 
         // 获取所有授权配置信息
         $list_module = ModuleModel::where('access', 'neq', '')
