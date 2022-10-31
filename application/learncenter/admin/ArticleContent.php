@@ -148,15 +148,21 @@ class ArticleContent extends Admin
         $info = ArticleContentModel::where('id', $id)
             ->find();
 
+        $articles = ArticleModel::column('id,title');
         // 使用ZBuilder快速创建表单
         $data = ZBuilder::make('form')
             ->setPageTitle('编辑') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
-                ['select', 'type', '课程类型', '', \Study\Type::get_type()],
-                ['text', 'study_id', '课程id', '请确认务必存在'],
-                ['number', 'uid', '家长id', ''],
-                ['textarea', 'content', '内容'],]);
+                ['select', 'type', '课程类型', '', ['default' => 'default', 'video' => '视频/合并视频', 'audio' => '音频/合并音频', 'text' => '文章内容']],
+                ['number', 'rank', '排序（相同的合并成一个）', '请确认务必存在'],
+                ['select', 'aid', '隶属文章', '', $articles],
+                ['text', 'tag', '标签逗号分隔', ''],
+                ['text', 'name', '模块标题', ''],
+                ['text', 'title', '标题', ''],
+                ['text', 'content', '内容', ''],
+                ['file', 'url', '文件', ''],
+            ])
         return $data->setFormData($info) // 设置表单数据
         ->fetch();
     }
