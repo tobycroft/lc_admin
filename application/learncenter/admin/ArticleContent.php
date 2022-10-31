@@ -107,7 +107,7 @@ class ArticleContent extends Admin
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
                 ['text', 'content', '内容', ''],
-                ['file', 'url', '文件', ''],
+//                ['file', 'url', '文件', ''],
             ])
             ->fetch();
     }
