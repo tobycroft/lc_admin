@@ -44,7 +44,7 @@ class ArticleContent extends Admin
             ->addTopButton("add")
             ->setPageTitle('列表')
             ->setSearch(['id' => 'ID', "pid" => "上级UID", 'username' => '用户名']) // 设置搜索参数
-            ->addOrder('id,aid')
+            ->addOrder('id,aid,rank')
             ->addColumn('id', 'ID')
             ->addColumn('aid', '文章ID')
             ->addColumn('name', '模块标题')
