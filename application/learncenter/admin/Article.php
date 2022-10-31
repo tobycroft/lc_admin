@@ -93,7 +93,7 @@ class Article extends Admin
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
                 ['ueditor', 'content', '内容', ''],
-                ['file', 'img', '图片', ''],
+                ['image', 'img', '图片', ''],
                 ['datetime', 'show_date', '展示日期,', ''],
                 ['datetime', 'push_date', '推送日期,', ''],
                 ['datetime', 'push_avail', '是否可以推送,', ''],
