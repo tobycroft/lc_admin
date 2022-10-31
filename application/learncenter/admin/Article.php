@@ -47,7 +47,7 @@ class Article extends Admin
             ->addOrder('id')
             ->addColumn('id', 'ID')
             ->addColumn('title', '标题', 'textarea.edit')
-            ->addColumn('content', '内容')
+//            ->addColumn('content', '内容')
             ->addColumn('img', 'img', 'image')
             ->addColumn('bg_color', 'bg_color', 'textarea.edit')
             ->addColumn('show_date', '展示日期', 'text.exit')
