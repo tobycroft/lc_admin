@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\parentschool\admin;
+namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;

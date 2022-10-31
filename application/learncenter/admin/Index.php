@@ -1,14 +1,10 @@
 <?php
 
 
-namespace app\parentschool\admin;
+namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
-use app\parentschool\model\BalanceRecordModel;
-use app\parentschool\model\ExchangeRecordModel;
-use app\parentschool\model\TransferInModel;
-use app\parentschool\model\TransferRecordModel;
 use app\parentschool\model\UserModel;
 use think\Db;
 use think\facade\Hook;

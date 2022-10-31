@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\anymodule\admin;
+namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
 use app\anymodule\model\ParentModel;

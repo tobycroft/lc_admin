@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\anymodule\model;
+namespace app\learncenter\model;
 
 use think\Model;
 
