@@ -25,7 +25,7 @@ class ArticleContent extends Admin
     public function index()
     {
         // 获取排序
-        $order = $this->getOrder("id desc");
+        $order = $this->getOrder("aid desc,rank asc");
         $map = $this->getMap();
         // 读取用户数据
         $data_list = ArticleContentModel::where($map)
