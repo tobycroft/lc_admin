@@ -100,9 +100,9 @@ class ArticleContent extends Admin
             ->setPageTitle('新增') // 设置页面标题
             ->addColumn('url', 'url')
             ->addFormItems([ // 批量添加表单项
-                ['select', 'type', '课程类型', '', ['default' => 'default', 'video' => '视频/合并视频', 'audio' => '音频/合并音频', 'text' => '文章内容']],
-                ['number', 'rank', '排序（相同的合并成一个）', '请确认务必存在'],
-                ['select', 'aid', '隶属文章', '', $articles],
+//                ['select', 'type', '课程类型', '', ['default' => 'default', 'video' => '视频/合并视频', 'audio' => '音频/合并音频', 'text' => '文章内容']],
+//                ['number', 'rank', '排序（相同的合并成一个）', '请确认务必存在'],
+//                ['select', 'aid', '隶属文章', '', $articles],
                 ['text', 'tag', '标签逗号分隔', ''],
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
