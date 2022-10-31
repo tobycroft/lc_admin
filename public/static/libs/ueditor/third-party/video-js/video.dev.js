@@ -4911,7 +4911,7 @@ vjs.MediaTechController = vjs.Component.extend({
  * In addition to this, we still want the user to be considered inactive after
  * a few seconds of inactivity.
  *
- * Note: the only part of iOS interaction we can't mimic with this setup
+ * Article: the only part of iOS interaction we can't mimic with this setup
  * is a touch and hold on the video element counting as activity in order to
  * keep the controls showing, but that shouldn't be an issue. A touch and hold on
  * any controls will still keep the user active

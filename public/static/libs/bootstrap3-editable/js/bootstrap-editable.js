@@ -611,7 +611,7 @@ Editableform is linked with one of input types, e.g. 'text', 'select' etc.
     };   
 
     /*
-    Note: following params could redefined in engine: bootstrap or jqueryui:
+    Article: following params could redefined in engine: bootstrap or jqueryui:
     Classes 'control-group' and 'editable-error-block' must always present!
     */      
     $.fn.editableform.template = '<form class="form-inline editableform">'+
@@ -1057,18 +1057,18 @@ Applied as jQuery method.
                 rendering: $.proxy(this.setPosition, this), //this allows to place container correctly when loading shown
                 resize: $.proxy(this.setPosition, this), //this allows to re-position container when form size is changed 
                 rendered: $.proxy(function(){
-                    /**        
-                    Fired when container is shown and form is rendered (for select will wait for loading dropdown options).  
-                    **Note:** Bootstrap popover has own `shown` event that now cannot be separated from x-editable's one.
-                    The workaround is to check `arguments.length` that is always `2` for x-editable.                     
-                    
-                    @event shown 
-                    @param {Object} event event object
-                    @example
-                    $('#username').on('shown', function(e, editable) {
+                    /**
+                     Fired when container is shown and form is rendered (for select will wait for loading dropdown options).
+                     **Article:** Bootstrap popover has own `shown` event that now cannot be separated from x-editable's one.
+                     The workaround is to check `arguments.length` that is always `2` for x-editable.
+
+                     @event shown
+                     @param {Object} event event object
+                     @example
+                     $('#username').on('shown', function(e, editable) {
                         editable.input.$input.val('overwriting value of input..');
-                    });                     
-                    **/                      
+                    });
+                     **/
                     /*
                      TODO: added second param mainly to distinguish from bootstrap's shown event. It's a hotfix that will be solved in future versions via namespaced events.  
                     */
@@ -1083,7 +1083,7 @@ Applied as jQuery method.
         @method show()
         @param {boolean} closeAll Whether to close all other editable containers when showing this one. Default true.
         **/
-        /* Note: poshytip owerwrites this method totally! */          
+        /* Article: poshytip owerwrites this method totally! */
         show: function (closeAll) {
             this.$element.addClass('editable-open');
             if(closeAll !== false) {
@@ -1146,15 +1146,15 @@ Applied as jQuery method.
             this.innerHide();
 
             /**
-            Fired when container was hidden. It occurs on both save or cancel.  
-            **Note:** Bootstrap popover has own `hidden` event that now cannot be separated from x-editable's one.
-            The workaround is to check `arguments.length` that is always `2` for x-editable. 
+             Fired when container was hidden. It occurs on both save or cancel.
+             **Article:** Bootstrap popover has own `hidden` event that now cannot be separated from x-editable's one.
+             The workaround is to check `arguments.length` that is always `2` for x-editable.
 
-            @event hidden 
-            @param {object} event event object
-            @param {string} reason Reason caused hiding. Can be <code>save|cancel|onblur|nochange|manual</code>
-            @example
-            $('#username').on('hidden', function(e, reason) {
+             @event hidden
+             @param {object} event event object
+             @param {string} reason Reason caused hiding. Can be <code>save|cancel|onblur|nochange|manual</code>
+             @example
+             $('#username').on('hidden', function(e, reason) {
                 if(reason === 'save' || reason === 'cancel') {
                     //auto-open next editable
                     $(this).closest('tr').next().find('.editable').editable('show');
@@ -1997,18 +1997,18 @@ Makes editable any HTML element on the page. Applied as jQuery method.
             return result;
 
             /**
-            Returns current values of editable elements.   
-            Note that it returns an **object** with name-value pairs, not a value itself. It allows to get data from several elements.    
-            If value of some editable is `null` or `undefined` it is excluded from result object.
-            When param `isSingle` is set to **true** - it is supposed you have single element and will return value of editable instead of object.   
-             
-            @method getValue()
-            @param {bool} isSingle whether to return just value of single element
-            @returns {Object} object of element names and values
-            @example
-            $('#username, #fullname').editable('getValue');
-            //result:
-            {
+             Returns current values of editable elements.
+             Article that it returns an **object** with name-value pairs, not a value itself. It allows to get data from several elements.
+             If value of some editable is `null` or `undefined` it is excluded from result object.
+             When param `isSingle` is set to **true** - it is supposed you have single element and will return value of editable instead of object.
+
+             @method getValue()
+             @param {bool} isSingle whether to return just value of single element
+             @returns {Object} object of element names and values
+             @example
+             $('#username, #fullname').editable('getValue');
+             //result:
+             {
             username: "superuser",
             fullname: "John"
             }
@@ -2169,19 +2169,19 @@ Makes editable any HTML element on the page. Applied as jQuery method.
         **/         
         disabled: false,
         /**
-        How to toggle editable. Can be <code>click|dblclick|mouseenter|manual</code>.   
-        When set to <code>manual</code> you should manually call <code>show/hide</code> methods of editable.    
-        **Note**: if you call <code>show</code> or <code>toggle</code> inside **click** handler of some DOM element, 
-        you need to apply <code>e.stopPropagation()</code> because containers are being closed on any click on document.
-        
-        @example
-        $('#edit-button').click(function(e) {
+         How to toggle editable. Can be <code>click|dblclick|mouseenter|manual</code>.
+         When set to <code>manual</code> you should manually call <code>show/hide</code> methods of editable.
+         **Article**: if you call <code>show</code> or <code>toggle</code> inside **click** handler of some DOM element,
+         you need to apply <code>e.stopPropagation()</code> because containers are being closed on any click on document.
+
+         @example
+         $('#edit-button').click(function(e) {
             e.stopPropagation();
             $('#username').editable('toggle');
         });
 
-        @property toggle 
-        @type string
+         @property toggle
+         @type string
         @default 'click'
         **/          
         toggle: 'click',
@@ -2203,15 +2203,15 @@ Makes editable any HTML element on the page. Applied as jQuery method.
         @type string
         @default 'auto'
         **/          
-        autotext: 'auto', 
+        autotext: 'auto',
         /**
-        Initial value of input. If not set, taken from element's text.  
-        Note, that if element's text is empty - text is automatically generated from value and can be customized (see `autotext` option).  
-        For example, to display currency sign:
-        @example
-        <a id="price" data-type="text" data-value="100"></a>
-        <script>
-        $('#price').editable({
+         Initial value of input. If not set, taken from element's text.
+         Article, that if element's text is empty - text is automatically generated from value and can be customized (see `autotext` option).
+         For example, to display currency sign:
+         @example
+         <a id="price" data-type="text" data-value="100"></a>
+         <script>
+         $('#price').editable({
             ...
             display: function(value) {
               $(this).text(value + '$');
@@ -3601,28 +3601,28 @@ Time
 
 /**
 Select2 input. Based on amazing work of Igor Vaynberg https://github.com/ivaynberg/select2.  
-Please see [original select2 docs](http://ivaynberg.github.com/select2) for detailed description and options.  
- 
-You should manually download and include select2 distributive:  
+Please see [original select2 docs](http://ivaynberg.github.com/select2) for detailed description and options.
 
-    <link href="select2/select2.css" rel="stylesheet" type="text/css"></link>  
-    <script src="select2/select2.js"></script>  
-    
-To make it **bootstrap-styled** you can use css from [here](https://github.com/t0m/select2-bootstrap-css): 
+ You should manually download and include select2 distributive:
 
-    <link href="select2-bootstrap.css" rel="stylesheet" type="text/css"></link>    
-    
-**Note:** currently `autotext` feature does not work for select2 with `ajax` remote source.    
-You need initially put both `data-value` and element's text youself:    
+ <link href="select2/select2.css" rel="stylesheet" type="text/css"></link>
+ <script src="select2/select2.js"></script>
 
-    <a href="#" data-type="select2" data-value="1">Text1</a>
-    
-    
-@class select2
-@extends abstractinput
-@since 1.4.1
-@final
-@example
+ To make it **bootstrap-styled** you can use css from [here](https://github.com/t0m/select2-bootstrap-css):
+
+ <link href="select2-bootstrap.css" rel="stylesheet" type="text/css"></link>
+
+ **Article:** currently `autotext` feature does not work for select2 with `ajax` remote source.
+ You need initially put both `data-value` and element's text youself:
+
+ <a href="#" data-type="select2" data-value="1">Text1</a>
+
+
+ @class select2
+ @extends abstractinput
+ @since 1.4.1
+ @final
+ @example
 <a href="#" id="country" data-type="select2" data-pk="1" data-value="ru" data-url="/post" data-title="Select country"></a>
 <script>
 $(function(){

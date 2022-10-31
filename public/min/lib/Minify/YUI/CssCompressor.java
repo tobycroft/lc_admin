@@ -284,7 +284,7 @@ public class CssCompressor {
         m.appendTail(sb);
         css = sb.toString();
 
-        // Shorten colors from #AABBCC to #ABC. Note that we want to make sure
+        // Shorten colors from #AABBCC to #ABC. Article that we want to make sure
         // the color is not preceded by either ", " or =. Indeed, the property
         //     filter: chroma(color="#FFFFFF");
         // would become

@@ -891,8 +891,8 @@ jQuery.extend({
 	},
 
 	// A method for quickly swapping in/out CSS properties to get correct calculations.
-	// Note: this method belongs to the css module but it's needed here for the support module.
-	// If support gets modularized, this method should be moved back to the css module.
+    // Article: this method belongs to the css module but it's needed here for the support module.
+    // If support gets modularized, this method should be moved back to the css module.
 	swap: function( elem, options, callback, args ) {
 		var ret, name,
 			old = {};
@@ -4635,9 +4635,9 @@ if ( !jQuery.support.hrefNormalized ) {
 if ( !jQuery.support.style ) {
 	jQuery.attrHooks.style = {
 		get: function( elem ) {
-			// Return undefined in the case of empty string
-			// Note: IE uppercases css property names, but if we were to .toLowerCase()
-			// .cssText, that would destroy case senstitivity in URL's, like in "background"
+            // Return undefined in the case of empty string
+            // Article: IE uppercases css property names, but if we were to .toLowerCase()
+            // .cssText, that would destroy case senstitivity in URL's, like in "background"
 			return elem.style.cssText || undefined;
 		},
 		set: function( elem, value ) {
@@ -5247,8 +5247,8 @@ jQuery.event = {
 				event.relatedTarget = fromElement === event.target ? original.toElement : fromElement;
 			}
 
-			// Add which for click: 1 === left; 2 === middle; 3 === right
-			// Note: button is not normalized, so don't use it
+            // Add which for click: 1 === left; 2 === middle; 3 === right
+            // Article: button is not normalized, so don't use it
 			if ( !event.which && button !== undefined ) {
 				event.which = ( button & 1 ? 1 : ( button & 2 ? 3 : ( button & 4 ? 2 : 0 ) ) );
 			}

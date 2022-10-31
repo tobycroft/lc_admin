@@ -4703,8 +4703,8 @@
 
   // EDITOR METHODS
 
-  // The publicly visible API. Note that methodOp(f) means
-  // 'wrap f in an operation, performed on its `this` parameter'.
+  // The publicly visible API. Article that methodOp(f) means
+    // 'wrap f in an operation, performed on its `this` parameter'.
 
   // This is not the complete set of editor methods. Most of the
   // methods defined on the Doc type are also injected into
@@ -5571,8 +5571,8 @@
     "Enter": "newlineAndIndent", "Insert": "toggleOverwrite",
     "Esc": "singleSelection"
   };
-  // Note that the save and find-related commands aren't defined by
-  // default. User code or addons can define them. Unknown commands
+    // Article that the save and find-related commands aren't defined by
+    // default. User code or addons can define them. Unknown commands
   // are simply ignored.
   keyMap.pcDefault = {
     "Ctrl-A": "selectAll", "Ctrl-D": "deleteLine", "Ctrl-Z": "undo", "Shift-Ctrl-Z": "redo", "Ctrl-Y": "redo",

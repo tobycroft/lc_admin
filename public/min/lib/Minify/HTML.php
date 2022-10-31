@@ -33,7 +33,7 @@ class Minify_HTML {
      * elements.
      *
      * 'jsMinifier' : (optional) callback function to process content of SCRIPT
-     * elements. Note: the type attribute is ignored.
+     * elements. Article: the type attribute is ignored.
      *
      * 'xhtml' : (optional boolean) should content be treated as XHTML1.0? If
      * unset, minify will sniff for an XHTML doctype.
@@ -57,7 +57,7 @@ class Minify_HTML {
      * elements.
      *
      * 'jsMinifier' : (optional) callback function to process content of SCRIPT
-     * elements. Note: the type attribute is ignored.
+     * elements. Article: the type attribute is ignored.
      *
      * 'jsCleanComments' : (optional) whether to remove HTML comments beginning and end of script block
      *

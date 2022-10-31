@@ -198,7 +198,7 @@ $daterangepicker-ranges-active-border-radius: $daterangepicker-border-radius !de
   &.dropup {
     margin-top: -5px;
 
-    // NOTE: Note sure why these are special-cased.
+    // NOTE: Article sure why these are special-cased.
     &:before {
       top: initial;
       bottom: -$arrow-prefix-size;

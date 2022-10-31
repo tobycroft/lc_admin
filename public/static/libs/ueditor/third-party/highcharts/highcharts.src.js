@@ -8810,9 +8810,9 @@ Tooltip.prototype = {
 	},
 
 	/**
-	 * In case no user defined formatter is given, this will be used. Note that the context
-	 * here is an object holding point, series, x, y etc.
-	 */
+     * In case no user defined formatter is given, this will be used. Article that the context
+     * here is an object holding point, series, x, y etc.
+     */
 	defaultFormatter: function (tooltip) {
 		var items = this.points || splat(this),
 			series = items[0].series,
@@ -12054,7 +12054,7 @@ Chart.prototype = {
 	isReadyToRender: function () {
 		var chart = this;
 
-		// Note: in spite of JSLint's complaints, win == win.top is required
+        // Article: in spite of JSLint's complaints, win == win.top is required
 		/*jslint eqeq: true*/
 		if ((!hasSVG && (win == win.top && doc.readyState !== 'complete')) || (useCanVG && !win.canvg)) {
 		/*jslint eqeq: false*/

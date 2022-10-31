@@ -26,7 +26,7 @@
  * header('Content-Type: text/css'); // needed if not HTML
  * HTTP_Encoder::output($css);
  * </code>
- * 
+ *
  * <code>
  * // Just sniff for the accepted encoding
  * $encoding = HTTP_Encoder::getAcceptedEncoding();
@@ -34,11 +34,11 @@
  *
  * For more control over headers, use getHeaders() and getData() and send your
  * own output.
- * 
- * Note: If you don't need header mgmt, use PHP's native gzencode, gzdeflate, 
+ *
+ * Article: If you don't need header mgmt, use PHP's native gzencode, gzdeflate,
  * and gzcompress functions for gzip, deflate, and compress-encoding
  * respectively.
- * 
+ *
  * @package Minify
  * @subpackage HTTP
  * @author Stephen Clay <steve@mrclay.org>

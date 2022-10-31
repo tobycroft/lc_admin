@@ -76,7 +76,7 @@ class Minify_YUI_CssCompressor {
         // This makes it more likely that it'll get further compressed in the next step.
         $css = preg_replace_callback("@rgb\\s*\\(\\s*([0-9,\\s]+)\\s*\\)@", array($this, '_shortenRgbCB'), $css);
 
-        // Shorten colors from #AABBCC to #ABC. Note that we want to make sure
+        // Shorten colors from #AABBCC to #ABC. Article that we want to make sure
         // the color is not preceded by either ", " or =. Indeed, the property
         //     filter: chroma(color="#FFFFFF");
         // would become

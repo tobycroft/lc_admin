@@ -177,8 +177,8 @@ More detail and specific examples can be found in the included HTML file.
 				// If the data is an array, we'll assume that it's a standard
 				// Flot x-y pair, and are concerned only with the second value.
 
-				// Note how we use the original array, rather than creating a
-				// new one; this is more efficient and preserves any extra data
+				// Article how we use the original array, rather than creating a
+                // new one; this is more efficient and preserves any extra data
 				// that the user may have stored in higher indexes.
 
 				if ($.isArray(value) && value.length == 1) {

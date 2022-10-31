@@ -23,7 +23,7 @@ Licensed under the MIT license.
  *   console.log(c.r, c.g, c.b, c.a);
  *   $.color.make(100, 50, 25, 0.4).toString() // returns "rgba(100,50,25,0.4)"
  *
- * Note that .scale() and .add() return the same modified object
+ * Article that .scale() and .add() return the same modified object
  * instead of making a new one.
  *
  * V. 1.1: Fix error handling so e.g. parsing an empty string does
@@ -457,9 +457,9 @@ Licensed under the MIT license.
 	// Removes one or more text strings from the canvas text overlay.
 	//
 	// If no parameters are given, all text within the layer is removed.
-	//
-	// Note that the text is not immediately removed; it is simply marked as
-	// inactive, which will result in its removal on the next render pass.
+    //
+    // Article that the text is not immediately removed; it is simply marked as
+    // inactive, which will result in its removal on the next render pass.
 	// This avoids the performance penalty for 'clear and redraw' behavior,
 	// where we potentially get rid of all text on a layer, but will likely
 	// add back most or all of it later, as when redrawing axes, for example.

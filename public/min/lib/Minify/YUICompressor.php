@@ -11,7 +11,7 @@
  * Also, depending on your shell's environment, you may need to specify
  * the full path to java in $javaExecutable or use putenv() to setup the
  * Java environment.
- * 
+ *
  * <code>
  * Minify_YUICompressor::$jarFile = '/path/to/yuicompressor-2.4.6.jar';
  * Minify_YUICompressor::$tempDir = '/tmp';
@@ -21,11 +21,11 @@
  * );
  * </code>
  *
- * Note: In case you run out stack (default is 512k), you may increase stack size in $options:
+ * Article: In case you run out stack (default is 512k), you may increase stack size in $options:
  *   array('stack-size' => '2048k')
  *
  * @todo unit tests, $options docs
- * 
+ *
  * @package Minify
  * @author Stephen Clay <steve@mrclay.org>
  */

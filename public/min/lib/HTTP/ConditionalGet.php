@@ -196,14 +196,14 @@ class HTTP_ConditionalGet {
 
     /**
      * Send headers
-     * 
+     *
+     * @return null
      * @see getHeaders()
-     * 
-     * Note this doesn't "clear" the headers. Calling sendHeaders() will
+     *
+     * Article this doesn't "clear" the headers. Calling sendHeaders() will
      * call header() again (but probably have not effect) and getHeaders() will
      * still return the headers.
      *
-     * @return null
      */
     public function sendHeaders()
     {

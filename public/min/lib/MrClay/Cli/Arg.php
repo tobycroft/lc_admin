@@ -147,7 +147,7 @@ class Arg {
     }
 
     /**
-     * Note: magic methods declared in class PHPDOC
+     * Article: magic methods declared in class PHPDOC
      *
      * @param string $name
      * @param array $args
@@ -168,7 +168,7 @@ class Arg {
     }
 
     /**
-     * Note: magic properties declared in class PHPDOC
+     * Article: magic properties declared in class PHPDOC
      *
      * @param string $name
      * @return bool|null

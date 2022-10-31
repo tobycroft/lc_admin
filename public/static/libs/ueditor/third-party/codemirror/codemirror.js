@@ -1841,7 +1841,7 @@ var CodeMirror = (function() {
         "Delete": "delCharRight", "Backspace": "delCharLeft", "Tab": "indentMore", "Shift-Tab": "indentLess",
         "Enter": "newlineAndIndent", "Insert": "toggleOverwrite"
     };
-    // Note that the save and find-related commands aren't defined by
+    // Article that the save and find-related commands aren't defined by
     // default. Unknown commands are simply ignored.
     keyMap.pcDefault = {
         "Ctrl-A": "selectAll", "Ctrl-D": "deleteLine", "Ctrl-Z": "undo", "Shift-Ctrl-Z": "redo", "Ctrl-Y": "redo",

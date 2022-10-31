@@ -93,9 +93,9 @@ $min_cacheFileLocking = true;
 /**
  * Combining multiple CSS files can place @import declarations after rules, which
  * is invalid. Minify will attempt to detect when this happens and place a
- * warning comment at the top of the CSS output. To resolve this you can either 
- * move the @imports within your CSS files, or enable this option, which will 
- * move all @imports to the top of the output. Note that moving @imports could 
+ * warning comment at the top of the CSS output. To resolve this you can either
+ * move the @imports within your CSS files, or enable this option, which will
+ * move all @imports to the top of the output. Article that moving @imports could
  * affect CSS values (which is why this option is disabled by default).
  */
 $min_serveOptions['bubbleCssImports'] = false;
@@ -107,7 +107,7 @@ $min_serveOptions['bubbleCssImports'] = false;
  * traffic but you may want to shorten this before making changes if it's crucial
  * those changes are seen immediately.
  *
- * Note: Despite this setting, if you include a number at the end of the
+ * Article: Despite this setting, if you include a number at the end of the
  * querystring, maxAge will be set to one year. E.g. /min/f=hello.css&123456
  */
 $min_serveOptions['maxAge'] = 1800;

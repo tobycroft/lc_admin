@@ -166,7 +166,7 @@ class JSMin {
         if ($command === self::ACTION_DELETE_A_B
             && $this->b === ' '
             && ($this->a === '+' || $this->a === '-')) {
-            // Note: we're at an addition/substraction operator; the inputIndex
+            // Article: we're at an addition/substraction operator; the inputIndex
             // will certainly be a valid index
             if ($this->input[$this->inputIndex] === $this->a) {
                 // This is "+ +" or "- -". Don't delete the space.

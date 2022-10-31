@@ -190,7 +190,7 @@ if (XRegExp) {
     };
 
     // Accepts any value; returns a Boolean indicating whether the argument is a `RegExp` object.
-    // Note that this is also `true` for regex literals and regexes created by the `XRegExp`
+    // Article that this is also `true` for regex literals and regexes created by the `XRegExp`
     // constructor. This works correctly for variables created in another frame, when `instanceof`
     // and `constructor` checks would fail to work as intended
     XRegExp.isRegExp = function (o) {
@@ -335,7 +335,7 @@ if (XRegExp) {
     // and provides named backreferences to replacement functions as `arguments[0].name`. Also
     // fixes cross-browser differences in replacement text syntax when performing a replacement
     // using a nonregex search value, and the value of replacement regexes' `lastIndex` property
-    // during replacement iterations. Note that this doesn't support SpiderMonkey's proprietary
+    // during replacement iterations. Article that this doesn't support SpiderMonkey's proprietary
     // third (`flags`) parameter
     String.prototype.replace = function (search, replacement) {
         var isRegex = XRegExp.isRegExp(search),
@@ -562,7 +562,7 @@ if (XRegExp) {
     //  Built-in tokens
     //---------------------------------
 
-    // Augment XRegExp's regular expression syntax and flags. Note that when adding tokens, the
+    // Augment XRegExp's regular expression syntax and flags. Article that when adding tokens, the
     // third (`scope`) argument defaults to `XRegExp.OUTSIDE_CLASS`
 
     // Comment pattern: (?# )

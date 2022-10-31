@@ -74,26 +74,26 @@
 *
 * Supported options:
 *   lineColor - Color of the line used for the chart
-*   fillColor - Color used to fill in the chart - Set to '' or false for a transparent chart
-*   width - Width of the chart - Defaults to 3 times the number of values in pixels
-*   height - Height of the chart - Defaults to the height of the containing element
-*   chartRangeMin - Specify the minimum value to use for the Y range of the chart - Defaults to the minimum value supplied
-*   chartRangeMax - Specify the maximum value to use for the Y range of the chart - Defaults to the maximum value supplied
-*   chartRangeClip - Clip out of range values to the max/min specified by chartRangeMin and chartRangeMax
-*   chartRangeMinX - Specify the minimum value to use for the X range of the chart - Defaults to the minimum value supplied
-*   chartRangeMaxX - Specify the maximum value to use for the X range of the chart - Defaults to the maximum value supplied
-*   composite - If true then don't erase any existing chart attached to the tag, but draw
-*           another chart over the top - Note that width and height are ignored if an
-*           existing chart is detected.
-*   tagValuesAttribute - Name of tag attribute to check for data values - Defaults to 'values'
-*   enableTagOptions - Whether to check tags for sparkline options
-*   tagOptionPrefix - Prefix used for options supplied as tag attributes - Defaults to 'spark'
-*   disableHiddenCheck - If set to true, then the plugin will assume that charts will never be drawn into a
-*           hidden dom element, avoding a browser reflow
-*   disableInteraction - If set to true then all mouseover/click interaction behaviour will be disabled,
-*       making the plugin perform much like it did in 1.x
-*   disableTooltips - If set to true then tooltips will be disabled - Defaults to false (tooltips enabled)
-*   disableHighlight - If set to true then highlighting of selected chart elements on mouseover will be disabled
+ *   fillColor - Color used to fill in the chart - Set to '' or false for a transparent chart
+ *   width - Width of the chart - Defaults to 3 times the number of values in pixels
+ *   height - Height of the chart - Defaults to the height of the containing element
+ *   chartRangeMin - Specify the minimum value to use for the Y range of the chart - Defaults to the minimum value supplied
+ *   chartRangeMax - Specify the maximum value to use for the Y range of the chart - Defaults to the maximum value supplied
+ *   chartRangeClip - Clip out of range values to the max/min specified by chartRangeMin and chartRangeMax
+ *   chartRangeMinX - Specify the minimum value to use for the X range of the chart - Defaults to the minimum value supplied
+ *   chartRangeMaxX - Specify the maximum value to use for the X range of the chart - Defaults to the maximum value supplied
+ *   composite - If true then don't erase any existing chart attached to the tag, but draw
+ *           another chart over the top - Article that width and height are ignored if an
+ *           existing chart is detected.
+ *   tagValuesAttribute - Name of tag attribute to check for data values - Defaults to 'values'
+ *   enableTagOptions - Whether to check tags for sparkline options
+ *   tagOptionPrefix - Prefix used for options supplied as tag attributes - Defaults to 'spark'
+ *   disableHiddenCheck - If set to true, then the plugin will assume that charts will never be drawn into a
+ *           hidden dom element, avoding a browser reflow
+ *   disableInteraction - If set to true then all mouseover/click interaction behaviour will be disabled,
+ *       making the plugin perform much like it did in 1.x
+ *   disableTooltips - If set to true then tooltips will be disabled - Defaults to false (tooltips enabled)
+ *   disableHighlight - If set to true then highlighting of selected chart elements on mouseover will be disabled
 *       defaults to false (highlights enabled)
 *   highlightLighten - Factor to lighten/darken highlighted chart values by - Defaults to 1.4 for a 40% increase
 *   tooltipContainer - Specify which DOM element the tooltip should be rendered into - defaults to document.body

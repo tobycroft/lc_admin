@@ -103,66 +103,66 @@ class Minify {
      * 'encodeMethod' : generally you should let this be determined by 
      * HTTP_Encoder (leave null), but you can force a particular encoding
      * to be returned, by setting this to 'gzip' or '' (no encoding)
-     * 
+     *
      * 'encodeLevel' : level of encoding compression (0 to 9, default 9)
-     * 
+     *
      * 'contentTypeCharset' : appended to the Content-Type header sent. Set to a falsey
-     * value to remove. (default 'utf-8')  
-     * 
+     * value to remove. (default 'utf-8')
+     *
      * 'maxAge' : set this to the number of seconds the client should use its cache
      * before revalidating with the server. This sets Cache-Control: max-age and the
      * Expires header. Unlike the old 'setExpires' setting, this setting will NOT
-     * prevent conditional GETs. Note this has nothing to do with server-side caching.
-     * 
+     * prevent conditional GETs. Article this has nothing to do with server-side caching.
+     *
      * 'rewriteCssUris' : If true, serve() will automatically set the 'currentDir'
      * minifier option to enable URI rewriting in CSS files (default true)
-     * 
+     *
      * 'bubbleCssImports' : If true, all @import declarations in combined CSS
-     * files will be move to the top. Note this may alter effective CSS values
+     * files will be move to the top. Article this may alter effective CSS values
      * due to a change in order. (default false)
-     * 
+     *
      * 'debug' : set to true to minify all sources with the 'Lines' controller, which
      * eases the debugging of combined files. This also prevents 304 responses.
-     * @see Minify_Lines::minify()
-     *
-     * 'concatOnly' : set to true to disable minification and simply concatenate the files.
-     * For JS, no minifier will be used. For CSS, only URI rewriting is still performed.
-     * 
-     * 'minifiers' : to override Minify's default choice of minifier function for 
-     * a particular content-type, specify your callback under the key of the 
-     * content-type:
-     * <code>
-     * // call customCssMinifier($css) for all CSS minification
-     * $options['minifiers'][Minify::TYPE_CSS] = 'customCssMinifier';
-     * 
-     * // don't minify Javascript at all
-     * $options['minifiers'][Minify::TYPE_JS] = '';
-     * </code>
-     * 
-     * 'minifierOptions' : to send options to the minifier function, specify your options
-     * under the key of the content-type. E.g. To send the CSS minifier an option: 
-     * <code>
-     * // give CSS minifier array('optionName' => 'optionValue') as 2nd argument 
-     * $options['minifierOptions'][Minify::TYPE_CSS]['optionName'] = 'optionValue';
-     * </code>
-     * 
-     * 'contentType' : (optional) this is only needed if your file extension is not 
-     * js/css/html. The given content-type will be sent regardless of source file
-     * extension, so this should not be used in a Groups config with other
-     * Javascript/CSS files.
-     * 
-     * Any controller options are documented in that controller's setupSources() method.
-     * 
      * @param mixed $controller instance of subclass of Minify_Controller_Base or string
      * name of controller. E.g. 'Files'
-     * 
+     *
      * @param array $options controller/serve options
-     * 
+     *
      * @return null|array if the 'quiet' option is set to true, an array
      * with keys "success" (bool), "statusCode" (int), "content" (string), and
      * "headers" (array).
      *
      * @throws Exception
+     *@see Minify_Lines::minify()
+     *
+     * 'concatOnly' : set to true to disable minification and simply concatenate the files.
+     * For JS, no minifier will be used. For CSS, only URI rewriting is still performed.
+     *
+     * 'minifiers' : to override Minify's default choice of minifier function for
+     * a particular content-type, specify your callback under the key of the
+     * content-type:
+     * <code>
+     * // call customCssMinifier($css) for all CSS minification
+     * $options['minifiers'][Minify::TYPE_CSS] = 'customCssMinifier';
+     *
+     * // don't minify Javascript at all
+     * $options['minifiers'][Minify::TYPE_JS] = '';
+     * </code>
+     *
+     * 'minifierOptions' : to send options to the minifier function, specify your options
+     * under the key of the content-type. E.g. To send the CSS minifier an option:
+     * <code>
+     * // give CSS minifier array('optionName' => 'optionValue') as 2nd argument
+     * $options['minifierOptions'][Minify::TYPE_CSS]['optionName'] = 'optionValue';
+     * </code>
+     *
+     * 'contentType' : (optional) this is only needed if your file extension is not
+     * js/css/html. The given content-type will be sent regardless of source file
+     * extension, so this should not be used in a Groups config with other
+     * Javascript/CSS files.
+     *
+     * Any controller options are documented in that controller's setupSources() method.
+     *
      */
     public static function serve($controller, $options = array())
     {
