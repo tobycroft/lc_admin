@@ -103,7 +103,7 @@ class ArticleContent extends Admin
                 ['text', 'tag', '标签逗号分隔', ''],
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
-                ['text', 'content', '内容', ''],
+                ['ueditor', 'content', '内容', ''],
                 ['file', 'url', '文件', ''],
             ])
             ->fetch();
@@ -157,7 +157,7 @@ class ArticleContent extends Admin
                 ['text', 'tag', '标签逗号分隔', ''],
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
-                ['text', 'content', '内容', ''],
+                ['ueditor', 'content', '内容', ''],
                 ['file', 'url', '文件', ''],
             ]);
         return $data->setFormData($info) // 设置表单数据
