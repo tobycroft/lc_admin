@@ -13,13 +13,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/523407fb06eb9e5f3d59889b3978d5bfe94299c8",
                 "reference": "523407fb06eb9e5f3d59889b3978d5bfe94299c8",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": "~5.6.0 || ~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0"
@@ -72,31 +66,25 @@
         },
         {
             "name": "tobycroft/aoss-sdk",
-            "version": "v1.6.3",
-            "version_normalized": "1.6.3.0",
+            "version": "v1.7.1",
+            "version_normalized": "1.7.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tobycroft/AossSdk.git",
-                "reference": "3fd72c5aa05391236196333783d8c54d6888aa0e"
+                "reference": "ab6302a8acaafd93a60be3675e81ecfd6d4d2abe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tobycroft/AossSdk/zipball/3fd72c5aa05391236196333783d8c54d6888aa0e",
-                "reference": "3fd72c5aa05391236196333783d8c54d6888aa0e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/tobycroft/AossSdk/zipball/ab6302a8acaafd93a60be3675e81ecfd6d4d2abe",
+                "reference": "ab6302a8acaafd93a60be3675e81ecfd6d4d2abe",
+                "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-gd": "*",
                 "php": ">=8.0"
             },
-            "time": "2022-10-31T03:02:59+00:00",
+            "time": "2022-11-14T04:29:03+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -114,7 +102,7 @@
             "description": "AOSS is a private platform support OSS upload,ExcelToJson,Image canvas,Gen Wechat code,Gen qrcode,Gen barcode",
             "support": {
                 "issues": "https://github.com/tobycroft/AossSdk/issues",
-                "source": "https://github.com/tobycroft/AossSdk/tree/v1.6.3"
+                "source": "https://github.com/tobycroft/AossSdk/tree/v1.7.1"
             },
             "install-path": "../tobycroft/aoss-sdk"
         },
