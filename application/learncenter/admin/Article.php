@@ -130,7 +130,6 @@ class Article extends Admin
                 $openid = "";
 //                $Aoss->uniform_send($openid, $template_id, $url, $data);
             }
-            $tag = TagModel::column('id,name');
 
             if (ArticleModel::update($data)) {
                 $user = ArticleModel::get($data['id']);
@@ -145,6 +144,7 @@ class Article extends Admin
         // 获取数据
         $info = ArticleModel::where('id', $id)
             ->find();
+        $tag = TagModel::column('id,name');
 
         // 使用ZBuilder快速创建表单
         $data = ZBuilder::make('form')
