@@ -96,7 +96,7 @@ class Article extends Admin
                 ['image', 'img', '图片', ''],
                 ['datetime', 'show_date', '展示日期,', ''],
                 ['datetime', 'push_date', '推送日期,', ''],
-                ['datetime', 'push_avail', '是否可以推送,', ''],
+                ['switch', 'push_avail', '是否可以推送,', ''],
             ])
             ->fetch();
     }
@@ -149,7 +149,7 @@ class Article extends Admin
                 ['file', 'img', '图片', ''],
                 ['datetime', 'show_date', '展示日期,', ''],
                 ['datetime', 'push_date', '推送日期,', ''],
-                ['datetime', 'push_avail', '是否可以推送,', ''],
+                ['switch', 'push_avail', '是否可以推送,', ''],
             ]);
         return $data->setFormData($info) // 设置表单数据
         ->fetch();
