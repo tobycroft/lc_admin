@@ -7,6 +7,8 @@ use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\learncenter\model\ArticleModel;
 use app\learncenter\model\TagModel;
+use app\learncenter\model\UserInfoModel;
+use app\learncenter\model\UserModel;
 use think\Db;
 use think\facade\Hook;
 use Tobycroft\AossSdk\WechatOffi;
@@ -126,9 +128,28 @@ class Article extends Admin
             // 非超级管理需要验证可选择角色
             if ($data["push_avail"] == "on") {
                 $Aoss = new WechatOffi(config('upload_prefix'), 'complete');
-
-                $openid = "";
-//                $Aoss->uniform_send($openid, $template_id, $url, $data);
+                $uids = UserInfoModel::where("tag_id", $data["tag_id"])->column("uid");
+                $users = UserModel::whereIn("id", $uids)->select();
+                foreach ($users as $user) {
+                    $Aoss->uniform_send($user["wx_id"], 'yS_JA3gE5-qg2fAqfTNr2mEc4-OB70AOX3afN1Oi_vQ', 'https://lc.familyeducation.org.cn/#/weeklyDuringPregnancy?id=' . $id, [
+                        'first' => [
+                            'value' => 'text1',
+                            'color' => '#173177',
+                        ],
+                        'keyword1' => [
+                            'value' => 'text1',
+                            'color' => '#173177',
+                        ],
+                        'keyword2' => [
+                            'value' => 'text1',
+                            'color' => '#173177',
+                        ],
+                        'remark' => [
+                            'value' => 'text1',
+                            'color' => '#173177',
+                        ],
+                    ]);
+                }
             }
 
             if (ArticleModel::update($data)) {
