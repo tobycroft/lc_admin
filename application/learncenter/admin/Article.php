@@ -120,7 +120,6 @@ class Article extends Admin
         if ($id === null)
             $this->error('缺少参数');
 
-
         // 保存数据
         if ($this->request->isPost()) {
             $data = $this->request->post();
