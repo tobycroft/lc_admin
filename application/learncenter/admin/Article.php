@@ -9,9 +9,7 @@ use app\learncenter\model\ArticleModel;
 use app\learncenter\model\TagModel;
 use think\Db;
 use think\facade\Hook;
-use Tobycroft\AossSdk\Aoss;
 use Tobycroft\AossSdk\WechatOffi;
-use Tobycroft\AossSdk\WechatOffiPush;
 use util\Tree;
 
 /**
@@ -130,8 +128,9 @@ class Article extends Admin
                 $Aoss = new WechatOffi(config('upload_prefix'), 'complete');
 
                 $openid = "";
-                $Aoss->uniform_send($openid, $template_id, $url, $data);
+//                $Aoss->uniform_send($openid, $template_id, $url, $data);
             }
+            $tag = TagModel::column('id,name');
 
             if (ArticleModel::update($data)) {
                 $user = ArticleModel::get($data['id']);
@@ -152,6 +151,7 @@ class Article extends Admin
             ->setPageTitle('编辑') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
+                ['select', 'tag_id', '', '', $tag],
                 ['text', 'bg_color', '背景色', '可空'],
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
