@@ -6,8 +6,12 @@ namespace app\learncenter\admin;
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\learncenter\model\ArticleModel;
+use app\learncenter\model\TagModel;
 use think\Db;
 use think\facade\Hook;
+use Tobycroft\AossSdk\Aoss;
+use Tobycroft\AossSdk\WechatOffi;
+use Tobycroft\AossSdk\WechatOffiPush;
 use util\Tree;
 
 /**
@@ -83,12 +87,13 @@ class Article extends Admin
                 $this->error('新增失败');
             }
         }
-
+        $tag = TagModel::column("id,name");
 
         // 使用ZBuilder快速创建表单
         return ZBuilder::make('form')
             ->setPageTitle('新增') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
+                ['select', 'tag_id', '', '', $tag],
                 ['text', 'bg_color', '背景色', '可空'],
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
@@ -121,7 +126,12 @@ class Article extends Admin
             $data = $this->request->post();
 
             // 非超级管理需要验证可选择角色
+            if ($data["push_avail"] == "on") {
+                $Aoss = new WechatOffi(config('upload_prefix'), 'complete');
 
+                $openid = "";
+                $Aoss->uniform_send($openid, $template_id, $url, $data);
+            }
 
             if (ArticleModel::update($data)) {
                 $user = ArticleModel::get($data['id']);
