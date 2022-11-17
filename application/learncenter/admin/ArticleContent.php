@@ -59,7 +59,7 @@ class ArticleContent extends Admin
             ->addColumn('type', '类型', 'select', $this->arr)
             ->addColumn('title', '标题')
 //            ->addColumn('content', '内容')
-            ->addColumn('url', 'url')
+//            ->addColumn('url', 'url')
             ->addColumn('change_date', '修改时间')
             ->addColumn('date', '创建时间')
             ->addColumn('right_button', '操作', 'btn')
