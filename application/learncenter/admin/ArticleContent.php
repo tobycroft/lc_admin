@@ -36,6 +36,7 @@ class ArticleContent extends Admin
             ->order($order)
             ->paginate()->each(function ($item) {
                 $item["content"] = htmlspecialchars($item["content"]);
+                return $item;
             });
         $page = $data_list->render();
         $todaytime = date('Y-m-d H:i:s', strtotime(date("Y-m-d"), time()));
