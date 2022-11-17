@@ -62,6 +62,7 @@ class ArticleContent extends Admin
             ->addColumn('rank', '排序')
             ->addColumn('type', '类型', 'select', $this->arr)
             ->addColumn('content', '内容', "popover", 20)
+            ->addColumn('extra', '带图', "img_url")
 //            ->addColumn('url', 'url')
 //            ->addColumn('change_date', '修改时间')
             ->addColumn('date', '创建时间')
