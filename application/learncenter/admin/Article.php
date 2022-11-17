@@ -56,7 +56,7 @@ class Article extends Admin
             ->addColumn('title', '标题', 'textarea.edit')
 //            ->addColumn('content', '内容')
 //            ->addColumn('img', 'img', 'image')
-            ->addColumn('link', 'url', 'link', url('/#/weeklyDuringPregnancy?article_id=__id__', "", '', 'lc.familyeducation.org.cn'), "_blankk")
+            ->addColumn('link', 'url', 'link', url('/#/weeklyDuringPregnancy?article_id=__id__', "", '', 'lc.familyeducation.org.cn'), "_blank")
 //            ->addColumn('bg_color', 'bg_color', 'textarea.edit')
             ->addColumn('show_date', '展示日期', 'text.exit')
             ->addColumn('push_date', '推送日期', "text.edit")
