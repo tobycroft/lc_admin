@@ -34,7 +34,9 @@ class ArticleContent extends Admin
         // 读取用户数据
         $data_list = ArticleContentModel::where($map)
             ->order($order)
-            ->paginate();
+            ->paginate()->each(function ($item) {
+                $item["content"] = htmlspecialchars($item["content"]);
+            });
         $page = $data_list->render();
         $todaytime = date('Y-m-d H:i:s', strtotime(date("Y-m-d"), time()));
 
@@ -58,7 +60,7 @@ class ArticleContent extends Admin
             ->addColumn('tag', '标签')
             ->addColumn('rank', '排序')
             ->addColumn('type', '类型', 'select', $this->arr)
-            ->addColumn('content', '内容', "popover", 5)
+            ->addColumn('content', '内容', "popover")
 //            ->addColumn('url', 'url')
 //            ->addColumn('change_date', '修改时间')
             ->addColumn('date', '创建时间')
