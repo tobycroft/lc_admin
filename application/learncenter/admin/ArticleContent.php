@@ -60,7 +60,7 @@ class ArticleContent extends Admin
             ->addColumn('type', '类型', 'select', $this->arr)
             ->addColumn('content', '内容', "popover")
 //            ->addColumn('url', 'url')
-            ->addColumn('change_date', '修改时间')
+//            ->addColumn('change_date', '修改时间')
             ->addColumn('date', '创建时间')
             ->addColumn('right_button', '操作', 'btn')
             ->addRightButton('edit') // 添加编辑按钮
