@@ -34,7 +34,10 @@ class Article extends Admin
         // 读取用户数据
         $data_list = ArticleModel::where($map)
             ->order($order)
-            ->paginate();
+            ->paginate()->each(function ($item) {
+                $item["link"] = "https://lc.familyeducation.org.cn/#/weeklyDuringPregnancy?article_id=" . $item["id"];
+                return $item;
+            });
         $page = $data_list->render();
         $todaytime = date('Y-m-d H:i:s', strtotime(date("Y-m-d"), time()));
 
