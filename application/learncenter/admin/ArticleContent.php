@@ -58,7 +58,7 @@ class ArticleContent extends Admin
             ->addColumn('rank', '排序')
             ->addColumn('type', '类型', 'select', $this->arr)
             ->addColumn('title', '标题')
-            ->addColumn('content', '内容')
+//            ->addColumn('content', '内容')
             ->addColumn('url', 'url')
             ->addColumn('change_date', '修改时间')
             ->addColumn('date', '创建时间')
@@ -105,7 +105,7 @@ class ArticleContent extends Admin
                 ['text', 'title', '标题', ''],
                 ['ueditor', 'content', '内容', ''],
                 ['file', 'url', '文件', ''],
-                ['image', 'extra', '文件', ''],
+                ['image', 'extra', '音频/视频对应的图片', ''],
             ])
             ->fetch();
     }
