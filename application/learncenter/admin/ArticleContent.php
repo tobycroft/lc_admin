@@ -160,6 +160,7 @@ class ArticleContent extends Admin
                 ['text', 'title', '标题', ''],
                 ['ueditor', 'content', '内容', ''],
                 ['file', 'url', '文件', ''],
+                ['image', 'extra', '文件', ''],
             ]);
         return $data->setFormData($info) // 设置表单数据
         ->fetch();
