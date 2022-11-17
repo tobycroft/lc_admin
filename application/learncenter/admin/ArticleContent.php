@@ -58,7 +58,7 @@ class ArticleContent extends Admin
             ->addColumn('tag', '标签')
             ->addColumn('rank', '排序')
             ->addColumn('type', '类型', 'select', $this->arr)
-//            ->addColumn('content', '内容')
+            ->addColumn('content', '内容', "popover")
 //            ->addColumn('url', 'url')
             ->addColumn('change_date', '修改时间')
             ->addColumn('date', '创建时间')
