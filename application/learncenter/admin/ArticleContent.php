@@ -101,7 +101,7 @@ class ArticleContent extends Admin
         return ZBuilder::make('form')
             ->setPageTitle('新增') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
-                ['select', 'type', '课程类型', '', $this->arr],
+                ['select', 'type', '显示类型', '', $this->arr],
                 ['number', 'rank', '排序（相同的合并成一个）', '请确认务必存在'],
                 ['select', 'aid', '隶属文章', '', $articles],
                 ['text', 'tag', '标签逗号分隔', ''],
@@ -156,7 +156,7 @@ class ArticleContent extends Admin
             ->setPageTitle('编辑') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
-                ['select', 'type', '课程类型', '', $this->arr],
+                ['select', 'type', '显示类型', '', $this->arr],
                 ['number', 'rank', '排序（相同的合并成一个）', '请确认务必存在'],
                 ['select', 'aid', '隶属文章', '', $articles],
                 ['text', 'tag', '标签逗号分隔', ''],

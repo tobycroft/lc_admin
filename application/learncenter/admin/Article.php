@@ -20,6 +20,9 @@ use util\Tree;
  */
 class Article extends Admin
 {
+
+    public array $arr = [0 => '未选择类型', 1 => '原版综合多重结构文章混排', 2 => 'PS类似音频+文章内容',];
+
     /**
      * 用户首页
      * @return mixed
@@ -58,8 +61,10 @@ class Article extends Admin
 //            ->addColumn('img', 'img', 'image')
             ->addColumn('link', 'url', 'link', url('/#/weeklyDuringPregnancy?article_id=__id__', "", '', 'lc.familyeducation.org.cn'), "_blank")
 //            ->addColumn('bg_color', 'bg_color', 'textarea.edit')
+            ->addColumn('show_type', '类型', 'select', $this->arr)
             ->addColumn('show_date', '展示日期', 'text.exit')
             ->addColumn('push_date', '推送日期', "text.edit")
+            ->addColumn('push_avail', '是否可以推送', 'switch')
             ->addColumn('push_avail', '是否可以推送', 'switch')
             ->addColumn('change_date', '修改时间')
             ->addColumn('date', '创建时间')
@@ -97,6 +102,7 @@ class Article extends Admin
         return ZBuilder::make('form')
             ->setPageTitle('新增') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
+                ['select', 'show_type', '展示类型', '', $this->arr],
                 ['select', 'tag_id', '', '', $tag],
                 ['text', 'bg_color', '背景色', '可空'],
                 ['text', 'name', '模块标题', ''],
@@ -181,6 +187,7 @@ class Article extends Admin
             ->setPageTitle('编辑') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
+                ['select', 'show_type', '展示类型', '', $this->arr],
                 ['select', 'tag_id', '', '', $tag],
                 ['text', 'bg_color', '背景色', '可空'],
                 ['text', 'name', '模块标题', ''],
