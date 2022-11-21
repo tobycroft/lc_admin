@@ -18,7 +18,7 @@ use util\Tree;
 class ArticleContent extends Admin
 {
 
-    public array $arr = ['video' => '视频/合并视频', 'audio' => '音频/合并音频', 'text' => '文章内容'];
+    public array $arr = ['video' => '视频/合并视频', 'audio' => '音频/合并音频', 'text' => '文章内容', "combine_audio" => "音频+文章内容合并"];
 
     /**
      * 用户首页
