@@ -101,6 +101,7 @@ class Article extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['select', 'show_type', '展示类型', '', $this->arr],
                 ['select', 'tag_id', '', '', $tag],
+                ['number', 'day_plus', '第几天推送', '',],
                 ['text', 'bg_color', '背景色', '可空'],
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
@@ -186,7 +187,7 @@ class Article extends Admin
                 ['hidden', 'id'],
                 ['select', 'show_type', '展示类型', '', $this->arr],
                 ['select', 'tag_id', '', '', $tag],
-                ['number', 'day_plus', '第几天推送', '', $tag],
+                ['number', 'day_plus', '第几天推送', '',],
                 ['text', 'bg_color', '背景色', '可空'],
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
