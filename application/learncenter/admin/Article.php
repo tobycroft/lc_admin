@@ -130,7 +130,7 @@ class Article extends Admin
         // 保存数据
         if ($this->request->isPost()) {
             $data = $this->request->post();
-            $data["push_avail"] = !empty($data['push_avail']);
+//            $data["push_avail"] = !empty($data['push_avail']);
 
             // 非超级管理需要验证可选择角色
 //            if ($data["push_avail"] == "on") {
