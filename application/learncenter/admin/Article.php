@@ -186,6 +186,7 @@ class Article extends Admin
                 ['hidden', 'id'],
                 ['select', 'show_type', '展示类型', '', $this->arr],
                 ['select', 'tag_id', '', '', $tag],
+                ['number', 'day_plus', '第几天推送', '', $tag],
                 ['text', 'bg_color', '背景色', '可空'],
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
