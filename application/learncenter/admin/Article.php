@@ -59,6 +59,7 @@ class Article extends Admin
 //            ->addColumn('content', '内容')
 //            ->addColumn('img', 'img', 'image')
 //            ->addColumn('bg_color', 'bg_color', 'textarea.edit')
+            ->addColumn('day_plus', '第几天推送', 'number')
             ->addColumn('show_type', '类型', 'select', $this->arr)
             ->addColumn('tag_id', '推送对象', 'select', $tags)
             ->addColumn('link', 'url', 'link', url('/#/weeklyDuringPregnancy?article_id=__id__', '', '', 'lc.familyeducation.org.cn'), '_blank')
