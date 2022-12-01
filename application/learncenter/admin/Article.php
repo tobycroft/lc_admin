@@ -45,6 +45,8 @@ class Article extends Admin
             ->count();
         $num2 = ArticleModel::count();
 
+        $tags = TagModel::column("id,name");
+
         return ZBuilder::make('table')
             ->setPageTips("总数量：" . $num2 . "    今日数量：" . $num1, 'danger')
 //            ->setPageTips("总数量：" . $num2, 'danger')
@@ -59,6 +61,7 @@ class Article extends Admin
             ->addColumn('link', 'url', 'link', url('/#/weeklyDuringPregnancy?article_id=__id__', "", '', 'lc.familyeducation.org.cn'), "_blank")
 //            ->addColumn('bg_color', 'bg_color', 'textarea.edit')
             ->addColumn('show_type', '类型', 'select', $this->arr)
+            ->addColumn('tag_id', '推送对象', 'select', $tags)
             ->addColumn('show_date', '展示日期', 'text.exit')
             ->addColumn('push_date', '推送日期', "text.edit")
             ->addColumn('push_avail', '是否可以推送', 'switch')
