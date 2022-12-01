@@ -147,20 +147,20 @@ class Article extends Admin
                         }
                         $Aoss->uniform_send($user['wx_id'], 'yS_JA3gE5-qg2fAqfTNr2mEc4-OB70AOX3afN1Oi_vQ', 'https://lc.familyeducation.org.cn/#/weeklyDuringPregnancy?article_id=' . $id, [
                             'first' => [
-                                'value' => 'text1',
-                                'color' => '#173177',
+                                'value' => $data["title"],
+//                                'color' => '#173177',
                             ],
                             'keyword1' => [
                                 'value' => 'text1',
-                                'color' => '#173177',
+//                                'color' => '#173177',
                             ],
                             'keyword2' => [
                                 'value' => 'text1',
-                                'color' => '#173177',
+//                                'color' => '#173177',
                             ],
                             'remark' => [
                                 'value' => 'text1',
-                                'color' => '#173177',
+//                                'color' => '#173177',
                             ],
                         ]);
                     }
