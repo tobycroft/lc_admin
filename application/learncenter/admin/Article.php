@@ -65,7 +65,6 @@ class Article extends Admin
             ->addColumn('show_date', '展示日期', 'text.exit')
             ->addColumn('push_date', '推送日期', "text.edit")
             ->addColumn('push_avail', '是否可以推送', 'switch')
-            ->addColumn('push_avail', '是否可以推送', 'switch')
             ->addColumn('change_date', '修改时间')
             ->addColumn('date', '创建时间')
             ->addColumn('right_button', '操作', 'btn')
