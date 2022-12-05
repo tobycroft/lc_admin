@@ -191,7 +191,7 @@ class User extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
                 ['static', 'username', '用户名', '不可更改'],
-                ['text', 'password', '密码', '必填，6-20位'],
+                ['password', 'password', '密码', '必填，6-20位'],
                 ['text', 'share', '共享码', '必填，6-20位'],
                 ['image', 'head_img', '头像'],
             ])
