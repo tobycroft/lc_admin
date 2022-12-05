@@ -12,7 +12,7 @@ use think\Model;
 class UserInfoModel extends Model
 {
     // 设置当前模型对应的完整数据表名称
-    protected $table = 'lc_user';
+    protected $table = 'lc_user_info';
 
     // 设置当前模型对应的完整数据表名称
 
