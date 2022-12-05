@@ -116,12 +116,6 @@ class User extends Admin
             }
         }
 
-        // 角色列表
-        if (session('user_auth.role') != 1) {
-            $role_list = RoleModel::getTree(null, false, session('user_auth.role'));
-        } else {
-            $role_list = RoleModel::getTree(null, false);
-        }
 
         // 使用ZBuilder快速创建表单
         return ZBuilder::make('form')
@@ -129,10 +123,8 @@ class User extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['text', 'username', '用户名', '必填，可由英文字母、数字组成'],
                 ['text', 'nickname', '昵称', '可以是中文'],
-                ['select', 'role', '主角色', '非超级管理员，禁止创建与当前角色同级的用户', $role_list],
-                ['select', 'roles', '副角色', '可多选', $role_list, '', 'multiple'],
                 ['text', 'email', '邮箱', ''],
-                ['password', 'password', '密码', '必填，6-20位'],
+                ['text', 'password', '密码', '必填，6-20位'],
                 ['text', 'mobile', '手机号'],
                 ['image', 'avatar', '头像'],
                 ['radio', 'status', '状态', '', ['禁用', '启用'], 1]
@@ -154,15 +146,6 @@ class User extends Admin
         if ($id === null)
             $this->error('缺少参数');
 
-        // 非超级管理员检查可编辑用户
-        if (session('user_auth.role') != 1) {
-            $role_list = RoleModel::getChildsId(session('user_auth.role'));
-            $user_list = UserModel::where('role', 'in', $role_list)
-                ->column('id');
-            if (!in_array($id, $user_list)) {
-                $this->error('权限不足，没有可操作的用户');
-            }
-        }
 
         // 保存数据
         if ($this->request->isPost()) {
@@ -191,7 +174,7 @@ class User extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
                 ['static', 'username', '用户名', '不可更改'],
-                ['password', 'password', '密码', '必填，6-20位'],
+                ['text', 'password', '密码', '必填，6-20位'],
                 ['text', 'share', '共享码', '必填，6-20位'],
                 ['image', 'head_img', '头像'],
             ])
