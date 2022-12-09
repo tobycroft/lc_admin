@@ -44,6 +44,7 @@ class Tag extends Admin
 //            ->setPageTips("总数量：" . $num2, 'danger')
             ->setPageTitle('列表')
             ->addOrder('id')
+            ->addColumn('id')
             ->addColumn('name', '名称')
             ->addColumn('right_button', '操作', 'btn')
             ->addRightButton('edit') // 添加编辑按钮
