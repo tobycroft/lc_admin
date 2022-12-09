@@ -5,7 +5,7 @@ namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
-use app\learncenter\model\UserInfoModel;
+use app\learncenter\model\TagModel;
 use think\Db;
 use think\facade\Hook;
 use util\Tree;
@@ -28,15 +28,15 @@ class Tag extends Admin
         $order = $this->getOrder("id desc");
         $map = $this->getMap();
         // 读取用户数据
-        $data_list = UserInfoModel::where($map)
+        $data_list = TagModel::where($map)
             ->order($order)
             ->paginate();
         $page = $data_list->render();
         $todaytime = date('Y-m-d H:i:s', strtotime(date("Y-m-d"), time()));
 
-        $num1 = UserInfoModel::where("date", ">", $todaytime)
+        $num1 = TagModel::where("date", ">", $todaytime)
             ->count();
-        $num2 = UserInfoModel::count();
+        $num2 = TagModel::count();
 
         $btn_access = [
             'title' => '用户地址',
@@ -49,7 +49,6 @@ class Tag extends Admin
             ->setPageTips("总数量：" . $num2 . "    今日数量：" . $num1, 'danger')
 //            ->setPageTips("总数量：" . $num2, 'danger')
             ->setPageTitle('列表')
-            ->setSearch(['id' => 'ID', "phone" => "phone", 'UserInfoname' => '用户名']) // 设置搜索参数
             ->addOrder('id')
             ->addColumn('name', '名称')
             ->addColumn('right_button', '操作', 'btn')
@@ -77,27 +76,8 @@ class Tag extends Admin
             if (true !== $result)
                 $this->error($result);
 
-            // 非超级管理需要验证可选择角色
-            if (session('UserInfo_auth.role') != 1) {
-                if ($data['role'] == session('UserInfo_auth.role')) {
-                    $this->error('禁止创建与当前角色同级的用户');
-                }
-                $role_list = RoleModel::getChildsId(session('UserInfo_auth.role'));
-                if (!in_array($data['role'], $role_list)) {
-                    $this->error('权限不足，禁止创建非法角色的用户');
-                }
 
-                if (isset($data['roles'])) {
-                    $deny_role = array_diff($data['roles'], $role_list);
-                    if ($deny_role) {
-                        $this->error('权限不足，附加角色设置错误');
-                    }
-                }
-            }
-
-            $data['roles'] = isset($data['roles']) ? implode(',', $data['roles']) : '';
-
-            if ($UserInfo = UserInfoModel::create($data)) {
+            if ($UserInfo = TagModel::create($data)) {
                 Hook::listen('UserInfo_add', $UserInfo);
                 // 记录行为
                 action_log('UserInfo_add', 'admin_UserInfo', $UserInfo['id'], UID);
@@ -148,7 +128,7 @@ class Tag extends Admin
         // 非超级管理员检查可编辑用户
         if (session('UserInfo_auth.role') != 1) {
             $role_list = RoleModel::getChildsId(session('UserInfo_auth.role'));
-            $UserInfo_list = UserInfoModel::where('role', 'in', $role_list)
+            $UserInfo_list = TagModel::where('role', 'in', $role_list)
                 ->column('id');
             if (!in_array($id, $UserInfo_list)) {
                 $this->error('权限不足，没有可操作的用户');
@@ -162,8 +142,8 @@ class Tag extends Admin
             // 非超级管理需要验证可选择角色
 
 
-            if (UserInfoModel::update($data)) {
-                $UserInfo = UserInfoModel::get($data['id']);
+            if (TagModel::update($data)) {
+                $UserInfo = TagModel::get($data['id']);
                 // 记录行为
                 action_log('UserInfo_edit', 'UserInfo', $id, UID);
                 $this->success('编辑成功');
@@ -173,7 +153,7 @@ class Tag extends Admin
         }
 
         // 获取数据
-        $info = UserInfoModel::where('id', $id)
+        $info = TagModel::where('id', $id)
             ->find();
 
         // 使用ZBuilder快速创建表单
@@ -210,7 +190,7 @@ class Tag extends Admin
         // 非超级管理员检查可编辑用户
         if (session('UserInfo_auth.role') != 1) {
             $role_list = RoleModel::getChildsId(session('UserInfo_auth.role'));
-            $UserInfo_list = UserInfoModel::where('role', 'in', $role_list)
+            $UserInfo_list = TagModel::where('role', 'in', $role_list)
                 ->column('id');
             if (!in_array($uid, $UserInfo_list)) {
                 $this->error('权限不足，没有可操作的用户');
@@ -421,19 +401,19 @@ class Tag extends Admin
 
         switch ($type) {
             case 'enable':
-                if (false === UserInfoModel::where('id', 'in', $ids)
+                if (false === TagModel::where('id', 'in', $ids)
                         ->setField('status', 1)) {
                     $this->error('启用失败');
                 }
                 break;
             case 'disable':
-                if (false === UserInfoModel::where('id', 'in', $ids)
+                if (false === TagModel::where('id', 'in', $ids)
                         ->setField('status', 0)) {
                     $this->error('禁用失败');
                 }
                 break;
             case 'delete':
-                if (false === UserInfoModel::where('id', 'in', $ids)
+                if (false === TagModel::where('id', 'in', $ids)
                         ->delete()) {
                     $this->error('删除失败');
                 }
