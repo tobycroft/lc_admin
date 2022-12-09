@@ -73,9 +73,6 @@ class Tag extends Admin
             // 验证
 
             if ($UserInfo = TagModel::create($data)) {
-                Hook::listen('UserInfo_add', $UserInfo);
-                // 记录行为
-                action_log('UserInfo_add', 'admin_UserInfo', $UserInfo['id'], UID);
                 $this->success('新增成功', url('index'));
             } else {
                 $this->error('新增失败');
