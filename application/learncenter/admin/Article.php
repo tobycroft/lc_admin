@@ -7,6 +7,7 @@ use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\learncenter\model\ArticleModel;
 use app\learncenter\model\TagModel;
+use app\learncenter\model\TypeShowModel;
 use think\Db;
 use think\facade\Hook;
 use util\Tree;
@@ -18,7 +19,13 @@ use util\Tree;
 class Article extends Admin
 {
 
-    public array $arr = [0 => '未选择类型', 1 => '原版综合多重结构文章混排', 2 => 'PS类似音频+文章内容', 3 => '孕期周刊v1', 4 => "新生儿周刊v1", 5 => '备孕周刊v1'];
+    public array $arr;
+
+    public function __construct(App $app = null)
+    {
+        parent::__construct($app);
+        $this->arr = TypeShowModel::column("id,name");
+    }
 
     /**
      * 用户首页
