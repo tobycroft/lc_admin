@@ -54,7 +54,7 @@ class UserInfo extends Admin
             ->addOrder('id')
             ->addColumn('uid', 'UID')
             ->addColumn('couple_name', '配偶名字')
-            ->addColumn('face', '头像')
+            ->addColumn('face', '头像', 'img_url')
             ->addColumn('tag_id', '用户类型', '', TagModel::column("id,name"))
             ->addColumn('birthday', '生日', 'datetime')
             ->addColumn('marrige_date', '结婚日期', 'datetime')
