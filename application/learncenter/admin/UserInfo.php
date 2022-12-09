@@ -58,10 +58,10 @@ class UserInfo extends Admin
             ->addColumn('tag_id', '用户类型', '', TagModel::column("id,name"))
             ->addColumn('birthday', '生日', 'datetime')
             ->addColumn('marrige_date', '结婚日期', 'datetime')
+            ->addColumn('pregnant_date', '怀孕日期', 'datetime')
 //            ->addColumn('share', '邀请码')
-            ->addColumn('active', '是否启用', "switch")
-            ->addColumn('admin', '设为管理员', "switch")
-            ->addColumn('change_date', '修改时间')
+            ->addColumn('baby_gender', '宝宝性别', "number")
+            ->addColumn('province', '省')
             ->addColumn('date', '创建时间')
             ->addColumn('right_button', '操作', 'btn')
             ->addRightButton('edit') // 添加编辑按钮
