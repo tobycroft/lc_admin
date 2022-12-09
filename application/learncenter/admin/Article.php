@@ -18,7 +18,7 @@ use util\Tree;
 class Article extends Admin
 {
 
-    public array $arr = [0 => '未选择类型', 1 => '原版综合多重结构文章混排', 2 => 'PS类似音频+文章内容',];
+    public array $arr = [0 => '未选择类型', 1 => '原版综合多重结构文章混排', 2 => 'PS类似音频+文章内容', 3 => '孕期周刊v1', 4 => "新生儿周刊v1", 5 => '备孕周刊v1'];
 
     /**
      * 用户首页
