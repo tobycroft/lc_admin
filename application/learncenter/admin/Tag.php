@@ -71,11 +71,6 @@ class Tag extends Admin
         if ($this->request->isPost()) {
             $data = $this->request->post();
             // 验证
-            $result = $this->validate($data, 'UserInfo');
-            // 验证失败 输出错误信息
-            if (true !== $result)
-                $this->error($result);
-
 
             if ($UserInfo = TagModel::create($data)) {
                 Hook::listen('UserInfo_add', $UserInfo);
@@ -98,15 +93,7 @@ class Tag extends Admin
         return ZBuilder::make('form')
             ->setPageTitle('新增') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
-                ['text', 'UserInfoname', '用户名', '必填，可由英文字母、数字组成'],
-                ['text', 'nickname', '昵称', '可以是中文'],
-                ['select', 'role', '主角色', '非超级管理员，禁止创建与当前角色同级的用户', $role_list],
-                ['select', 'roles', '副角色', '可多选', $role_list, '', 'multiple'],
-                ['text', 'email', '邮箱', ''],
-                ['password', 'password', '密码', '必填，6-20位'],
-                ['text', 'mobile', '手机号'],
-                ['image', 'avatar', '头像'],
-                ['radio', 'status', '状态', '', ['禁用', '启用'], 1]
+                ['text', 'name', '名称'],
             ])
             ->fetch();
     }
@@ -161,10 +148,7 @@ class Tag extends Admin
             ->setPageTitle('编辑') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
-                ['static', 'UserInfoname', '用户名', '不可更改'],
-                ['password', 'password', '密码', '必填，6-20位'],
-                ['text', 'share', '共享码', '必填，6-20位'],
-                ['image', 'head_img', '头像'],
+                ['text', 'name', '名称'],
             ])
             ->setFormData($info) // 设置表单数据
             ->fetch();
