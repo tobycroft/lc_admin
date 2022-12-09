@@ -65,7 +65,7 @@ class UserInfo extends Admin
             ->addColumn('city', '市')
             ->addColumn('district', '区')
             ->addColumn('street', '街道')
-            ->addColumn('address', '地址', 'popup')
+            ->addColumn('address', '地址', 'popover')
             ->addColumn('date', '创建时间')
             ->addColumn('right_button', '操作', 'btn')
             ->addRightButton('edit') // 添加编辑按钮
