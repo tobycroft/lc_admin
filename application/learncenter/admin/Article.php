@@ -113,7 +113,7 @@ class Article extends Admin
             ->setPageTitle('新增') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
                 ['select', 'show_type', '展示类型', '', $this->arr],
-                ['select', 'tag_id', '', '', $tag],
+                ['select', 'tag_id', '什么用户可以看', '', $tag],
                 ['number', 'from_day', '从第几天', '',],
                 ['number', 'to_day', '到第几天', '',],
                 ['text', 'bg_color', '背景色', '可空'],
@@ -200,7 +200,7 @@ class Article extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
                 ['select', 'show_type', '展示类型', '', $this->arr],
-                ['select', 'tag_id', '', '', $tag],
+                ['select', 'tag_id', '什么用户可以看', '', $tag],
                 ['number', 'from_day', '从第几天', '',],
                 ['number', 'to_day', '到第几天', '',],
                 ['text', 'bg_color', '背景色', '可空'],
