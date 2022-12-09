@@ -5,6 +5,7 @@ namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
+use app\learncenter\model\TagModel;
 use app\learncenter\model\UserInfoModel;
 use think\Db;
 use think\facade\Hook;
@@ -51,11 +52,12 @@ class UserInfo extends Admin
             ->setPageTitle('列表')
             ->setSearch(['id' => 'ID', "phone" => "phone", 'UserInfoname' => '用户名']) // 设置搜索参数
             ->addOrder('id')
-            ->addColumn('id', 'UID')
-            ->addColumn('pid', '上级UID')
-            ->addColumn('phone', '手机号')
-            ->addColumn('wx_name', '用户名')
-            ->addColumn('wx_img', '头像', 'img_url')
+            ->addColumn('uid', 'UID')
+            ->addColumn('couple_name', '配偶名字')
+            ->addColumn('face', '头像')
+            ->addColumn('tag_id', '用户类型', '', TagModel::column("id,name"))
+            ->addColumn('birthday', '生日', 'datetime')
+            ->addColumn('marrige_date', '结婚日期', 'datetime')
 //            ->addColumn('share', '邀请码')
             ->addColumn('active', '是否启用', "switch")
             ->addColumn('admin', '设为管理员', "switch")
