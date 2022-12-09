@@ -119,7 +119,6 @@ class Tag extends Admin
             if (TagModel::update($data)) {
                 $UserInfo = TagModel::get($data['id']);
                 // 记录行为
-                action_log('UserInfo_edit', 'UserInfo', $id, UID);
                 $this->success('编辑成功');
             } else {
                 $this->error('编辑失败');
