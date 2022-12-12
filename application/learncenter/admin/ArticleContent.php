@@ -84,7 +84,9 @@ class ArticleContent extends Admin
         // 保存数据
         if ($this->request->isPost()) {
             $data = $this->request->post();
-
+            if ($data["playtime"]) {
+                $data["content"] = $data["playtime"];
+            }
             if ($user = ArticleContentModel::create($data)) {
                 Hook::listen('user_add', $user);
                 // 记录行为
@@ -107,7 +109,8 @@ class ArticleContent extends Admin
                 ['text', 'tag', '标签逗号分隔', ''],
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
-                ['ueditor', 'content', '内容', '如果是音频视频内容，这里写1.6w代表播放量'],
+                ['ueditor', 'content', '内容', ''],
+                ['text', 'playtime', '播放量', '如果是音频视频内容，这里写1.6w代表播放量,仅限音视频'],
                 ['file', 'url', '文件', ''],
                 ['image', 'extra', '音频/视频对应的图片', ''],
             ])
@@ -135,7 +138,9 @@ class ArticleContent extends Admin
 
             // 非超级管理需要验证可选择角色
 
-
+            if ($data['playtime']) {
+                $data['content'] = $data['playtime'];
+            }
             if (ArticleContentModel::update($data)) {
                 $user = ArticleContentModel::get($data['id']);
                 // 记录行为
@@ -162,7 +167,8 @@ class ArticleContent extends Admin
                 ['text', 'tag', '标签逗号分隔', ''],
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
-                ['ueditor', 'content', '内容', '如果是音频视频内容，这里写1.6w代表播放量'],
+                ['ueditor', 'content', '内容', ''],
+                ['text', 'playtime', '播放量', '如果是音频视频内容，这里写1.6w代表播放量'],
                 ['file', 'url', '文件', ''],
                 ['image', 'extra', '音频/视频对应的图片', ''],
             ]);
