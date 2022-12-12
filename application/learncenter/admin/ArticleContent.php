@@ -110,7 +110,7 @@ class ArticleContent extends Admin
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
                 ['ueditor', 'content', '内容', ''],
-                ['text', 'playtime', '播放量', '如果是音频视频内容，这里写1.6w代表播放量,仅限音视频'],
+                ['text', 'playtime', '播放量，仅限音频内容填写', '如果是音频视频内容，这里写1.6w代表播放量,仅限音视频'],
                 ['file', 'url', '文件', ''],
                 ['image', 'extra', '音频/视频对应的图片', ''],
             ])
@@ -168,7 +168,7 @@ class ArticleContent extends Admin
                 ['text', 'name', '模块标题', ''],
                 ['text', 'title', '标题', ''],
                 ['ueditor', 'content', '内容', ''],
-                ['text', 'playtime', '播放量', '如果是音频视频内容，这里写1.6w代表播放量'],
+                ['text', 'playtime', '播放量，仅限音频内容填写', '如果是音频视频内容，这里写1.6w代表播放量,仅限音视频'],
                 ['file', 'url', '文件', ''],
                 ['image', 'extra', '音频/视频对应的图片', ''],
             ]);
