@@ -84,7 +84,7 @@ class ArticleContent extends Admin
         // 保存数据
         if ($this->request->isPost()) {
             $data = $this->request->post();
-            if (isset($data['playtime'])) {
+            if (($data['playtime'])) {
                 $data["content"] = $data["playtime"];
             }
             if ($user = ArticleContentModel::create($data)) {
@@ -138,7 +138,7 @@ class ArticleContent extends Admin
 
             // 非超级管理需要验证可选择角色
 
-            if (isset($data['playtime'])) {
+            if (($data['playtime'])) {
                 $data['content'] = $data['playtime'];
             }
             if (ArticleContentModel::update($data)) {
