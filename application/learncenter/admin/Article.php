@@ -54,6 +54,7 @@ class Article extends Admin
             ->count();
         $num2 = ArticleModel::count();
 
+
         $tags = TagModel::column("id,name");
 
         return ZBuilder::make('table')
