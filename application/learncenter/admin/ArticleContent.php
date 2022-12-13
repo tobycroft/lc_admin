@@ -48,7 +48,7 @@ class ArticleContent extends Admin
 
         $btn_access = [
             'title' => '用户地址',
-            'icon' => 'fa fa-fw fa-fw-jet',
+            'icon' => 'fa fa-fw fa-fighter-jet',
 //            'class' => 'btn btn-xs btn-default ajax-get',
             'href' => url('article/index', ['search_field' => 'id', 'keyword' => '__aid__'])
         ];
