@@ -61,7 +61,7 @@ class Article extends Admin
 //            ->setPageTips("总数量：" . $num2, 'danger')
             ->addTopButton("add")
             ->setPageTitle('列表')
-            ->setSearch(['id' => 'ID', "pid" => "上级UID", 'username' => '用户名']) // 设置搜索参数
+            ->setSearch(['id' => 'ID',]) // 设置搜索参数
             ->addOrder('id')
             ->addColumn('id', 'ID')
             ->addColumn('title', '标题', 'textarea.edit')
