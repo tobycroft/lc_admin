@@ -50,7 +50,7 @@ class ArticleContent extends Admin
             'title' => '用户地址',
             'icon' => 'fa fa-fw fa-jet',
 //            'class' => 'btn btn-xs btn-default ajax-get',
-            'href' => url('article/index', ['search_field' => 'id', 'keyword' => '__id__'])
+            'href' => url('article/index', ['search_field' => 'id', 'keyword' => '__aid__'])
         ];
 
         $articles = ArticleModel::column("id,title");
