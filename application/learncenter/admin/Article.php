@@ -54,7 +54,12 @@ class Article extends Admin
             ->count();
         $num2 = ArticleModel::count();
 
-
+        $btn_access = [
+            'title' => '用户地址',
+            'icon' => 'fa fa-fw fa-fighter-jet',
+//            'class' => 'btn btn-xs btn-default ajax-get',
+            'href' => url('article_content/index', ['search_field' => 'aid', 'keyword' => '__id__'])
+        ];
         $tags = TagModel::column("id,name");
 
         return ZBuilder::make('table')
@@ -80,6 +85,7 @@ class Article extends Admin
             ->addColumn('change_date', '修改时间')
             ->addColumn('date', '创建时间')
             ->addColumn('right_button', '操作', 'btn')
+            ->addRightButton('btn', $btn_access)
             ->addRightButton('edit') // 添加编辑按钮
             ->addRightButton('delete') //添加删除按钮
             ->setRowList($data_list) // 设置表格数据
