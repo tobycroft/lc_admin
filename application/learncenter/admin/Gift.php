@@ -74,7 +74,7 @@ class Gift extends Admin
             ->addColumn('win_day_reserved', '今日中奖剩余', 'number')
             ->addColumn('win_month_reserved', '本月中奖剩余', 'number')
             ->addColumn('win_next', '下一个人必中奖', "switch")
-            ->addColumn('date', '创建时间')
+//            ->addColumn('date', '创建时间')
 //            ->addColumn('right_button', '操作', 'btn')
 //            ->addRightButton('btn', $btn_access)
 //            ->addRightButton('edit') // 添加编辑按钮
