@@ -70,7 +70,7 @@ class Gift extends Admin
             ->addColumn('head_img', '头图', 'text')
             ->addColumn('type', '类型',)
             ->addColumn('num', '总量',)
-            ->addColumn('win_sep', '中间间隔', 'number')
+            ->addColumn('win_sep', '中奖间隔人数+1', 'number')
             ->addColumn('win_day_reserved', '今日中奖剩余', 'number')
             ->addColumn('win_month_reserved', '本月中奖剩余', 'number')
             ->addColumn('win_next', '下一个人必中奖', "switch")
