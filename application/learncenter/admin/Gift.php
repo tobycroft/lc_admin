@@ -5,7 +5,7 @@ namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
-use app\learncenter\model\ArticleModel;
+use app\learncenter\model\GiftModel;
 use app\learncenter\model\TagModel;
 use app\learncenter\model\TagShowModel;
 use think\Db;
@@ -33,7 +33,7 @@ class Gift extends Admin
         $order = $this->getOrder("id desc");
         $map = $this->getMap();
         // 读取用户数据
-        $data_list = ArticleModel::where($map)
+        $data_list = GiftModel::where($map)
             ->order($order)
             ->paginate()->each(function ($item) {
                 $item["link"] = "https://lc.familyeducation.org.cn/#/weeklyDuringPregnancy?article_id=" . $item["id"];
@@ -42,9 +42,9 @@ class Gift extends Admin
         $page = $data_list->render();
         $todaytime = date('Y-m-d H:i:s', strtotime(date("Y-m-d"), time()));
 
-        $num1 = ArticleModel::where("date", ">", $todaytime)
+        $num1 = GiftModel::where("date", ">", $todaytime)
             ->count();
-        $num2 = ArticleModel::count();
+        $num2 = GiftModel::count();
 
         $btn_access = [
             'title' => '用户地址',
@@ -96,7 +96,7 @@ class Gift extends Admin
         if ($this->request->isPost()) {
             $data = $this->request->post();
 
-            if ($user = ArticleModel::create($data)) {
+            if ($user = GiftModel::create($data)) {
                 Hook::listen('user_add', $user);
                 // 记录行为
                 action_log('user_add', 'admin_user', $user['id'], UID);
@@ -178,8 +178,8 @@ class Gift extends Admin
 //                }
 //            }
 
-            if (ArticleModel::update($data)) {
-                $user = ArticleModel::get($data['id']);
+            if (GiftModel::update($data)) {
+                $user = GiftModel::get($data['id']);
                 // 记录行为
                 action_log('user_edit', 'user', $id, UID);
                 $this->success('编辑成功');
@@ -189,7 +189,7 @@ class Gift extends Admin
         }
 
         // 获取数据
-        $info = ArticleModel::where('id', $id)
+        $info = GiftModel::where('id', $id)
             ->find();
         $tag = TagModel::column('id,name');
 
@@ -405,19 +405,19 @@ class Gift extends Admin
 
         switch ($type) {
             case 'enable':
-                if (false === ArticleModel::where('id', 'in', $ids)
+                if (false === GiftModel::where('id', 'in', $ids)
                         ->setField('status', 1)) {
                     $this->error('启用失败');
                 }
                 break;
             case 'disable':
-                if (false === ArticleModel::where('id', 'in', $ids)
+                if (false === GiftModel::where('id', 'in', $ids)
                         ->setField('status', 0)) {
                     $this->error('禁用失败');
                 }
                 break;
             case 'delete':
-                if (false === ArticleModel::where('id', 'in', $ids)
+                if (false === GiftModel::where('id', 'in', $ids)
                         ->delete()) {
                     $this->error('删除失败');
                 }
@@ -512,7 +512,7 @@ class Gift extends Admin
                 $this->error('权限不足，没有可操作的用户');
             }
         }
-        $result = ArticleModel::where("id", $id)
+        $result = GiftModel::where("id", $id)
             ->setField($field, $value);
         if (false !== $result) {
             action_log('user_edit', 'user', $id, UID);
