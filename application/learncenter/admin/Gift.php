@@ -73,6 +73,8 @@ class Gift extends Admin
             ->addColumn('win_sep', '中奖间隔人数+1', 'number')
             ->addColumn('win_day_reserved', '今日中奖剩余', 'number')
             ->addColumn('win_month_reserved', '本月中奖剩余', 'number')
+            ->addColumn('next_day_num', '明日自动预设', 'number')
+            ->addColumn('next_month_number', '下月自动预设', 'number')
             ->addColumn('win_next', '下一个人必中奖', "switch")
 //            ->addColumn('date', '创建时间')
 //            ->addColumn('right_button', '操作', 'btn')
