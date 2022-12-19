@@ -76,9 +76,9 @@ class Gift extends Admin
             ->addColumn('win_next', '下一个人必中奖', "switch")
             ->addColumn('date', '创建时间')
             ->addColumn('right_button', '操作', 'btn')
-            ->addRightButton('btn', $btn_access)
-            ->addRightButton('edit') // 添加编辑按钮
-            ->addRightButton('delete') //添加删除按钮
+//            ->addRightButton('btn', $btn_access)
+//            ->addRightButton('edit') // 添加编辑按钮
+//            ->addRightButton('delete') //添加删除按钮
             ->setRowList($data_list) // 设置表格数据
             ->setPages($page)
             ->fetch();
