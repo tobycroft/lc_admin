@@ -6,6 +6,7 @@ namespace app\learncenter\admin;
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\learncenter\model\UserModel;
+use Spatie\ArrayToXml\ArrayToXml;
 use think\Db;
 use think\facade\Hook;
 use util\Tree;
@@ -45,6 +46,10 @@ class Index extends Admin
             'href' => url('user_address/index', ['search_field' => 'uid', 'keyword' => '__id__'])
         ];
 
+        ArrayToXml::convert([
+            "test" => [
+                "_cdata" => "test"
+            ]]);
         return ZBuilder::make('form')
             ->addTopButton('add')
             ->addStatic('today', '今日注册数量', "", $num1)
