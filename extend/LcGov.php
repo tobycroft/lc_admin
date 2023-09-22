@@ -23,7 +23,8 @@ class LcGov
             "userid" => $userid,
             "password" => $password
         ];
-        return Net::Soap_wsdl($this->url());
+        $client = new SoapClient($this->url());
+        print_r($client->__getFcuntions());
     }
 
 }
