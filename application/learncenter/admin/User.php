@@ -6,6 +6,7 @@ namespace app\learncenter\admin;
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\learncenter\model\UserModel;
+use LcGov;
 use LcGov\LcGov;
 use think\Db;
 use think\facade\Hook;

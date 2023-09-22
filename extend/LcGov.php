@@ -12,7 +12,7 @@ class LcGov
 
     private function url()
     {
-        return $this->url1 + $this->url2 + $this->path;
+        return $this->url1 . $this->url2 . $this->path;
     }
 
     public function Login()
