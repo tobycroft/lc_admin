@@ -76,7 +76,7 @@ class Net
         return $response;
     }
 
-    public function PostBinary($url, $data = array())
+    public static function PostBinary($url, $data = array())
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_HEADER, false);

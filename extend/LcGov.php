@@ -1,6 +1,9 @@
 <?php
 
 namespace LcGov;
+
+use app\learncenter\model\SystemParamModel;
+
 class LcGov
 {
 
@@ -15,7 +18,13 @@ class LcGov
 
     public function Login()
     {
-
+        $userid = SystemParamModel::where("userid")->value("val");
+        $password = SystemParamModel::where("password")->value("val");
+        $array = [
+            "userid" => $userid,
+            "password" => $password
+        ];
+        Net::PostBinary($this->url(), $array);
     }
 
 }
