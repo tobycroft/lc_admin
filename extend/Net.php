@@ -1,6 +1,5 @@
 <?php
 
-namespace LcGov;
 
 use think\Exception;
 

@@ -2,7 +2,6 @@
 
 
 use app\learncenter\model\SystemParamModel;
-use LcGov\Net;
 
 class LcGov
 {
