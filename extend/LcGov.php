@@ -2,7 +2,6 @@
 
 
 use app\learncenter\model\SystemParamModel;
-use Spatie\ArrayToXml\ArrayToXml;
 
 class LcGov
 {
@@ -24,7 +23,6 @@ class LcGov
             "userid" => $userid,
             "password" => $password
         ];
-        $xml = ArrayToXml::convert($array);
         $client = new SoapClient($this->url());
         $guid = $client->LoginByAccount($array);
         echo $guid;
