@@ -51,6 +51,7 @@ class Index extends Admin
                 "_cdata" => "test"
             ]]);
         return ZBuilder::make('form')
+            ->addButton($btn_access)
             ->addStatic('today', '今日注册数量', "", $num1)
             ->addStatic('today', '全部注册数量', "", $num2)
             ->addStatic('arr', 'arr', "", $arr)

@@ -24,7 +24,7 @@ class LcGov
             "userid" => $userid,
             "password" => $password
         ];
-        Net::PostBinary($this->url(), $array);
+        return Net::PostBinary($this->url(), $array);
     }
 
 }
