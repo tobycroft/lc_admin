@@ -2,6 +2,7 @@
 
 
 use app\learncenter\model\SystemParamModel;
+use Spatie\ArrayToXml\ArrayToXml;
 
 class LcGov
 {
@@ -23,7 +24,8 @@ class LcGov
             "userid" => $userid,
             "password" => $password
         ];
-        return Net::PostBinary($this->url(), $array);
+        $xml = ArrayToXml::convert($array);
+        return Net::PostBinary($this->url(), $xml);
     }
 
 }
