@@ -1,6 +1,5 @@
 <?php
 
-namespace LcGov;
 
 use app\learncenter\model\SystemParamModel;
 
