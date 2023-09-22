@@ -16,6 +16,13 @@ use util\Tree;
  */
 class User extends Admin
 {
+
+    public function upload()
+    {
+
+    }
+
+
     /**
      * 用户首页
      * @return mixed
@@ -42,12 +49,13 @@ class User extends Admin
             'title' => '用户地址',
             'icon' => 'fa fa-fw fa-key',
 //            'class' => 'btn btn-xs btn-default ajax-get',
-            'href' => url('user_address/index', ['search_field' => 'uid', 'keyword' => '__id__'])
+            'href' => url('upload'),
         ];
 
         return ZBuilder::make('table')
             ->setPageTips("总数量：" . $num2 . "    今日数量：" . $num1, 'danger')
 //            ->setPageTips("总数量：" . $num2, 'danger')
+            ->addTopButton("upload", $btn_access)
             ->setPageTitle('列表')
             ->setSearch(['id' => 'ID', "phone" => "phone", 'username' => '用户名']) // 设置搜索参数
             ->addOrder('id')
