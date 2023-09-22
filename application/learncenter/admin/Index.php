@@ -46,7 +46,7 @@ class Index extends Admin
             'href' => url('user_address/index', ['search_field' => 'uid', 'keyword' => '__id__'])
         ];
 
-        ArrayToXml::convert([
+        $arr = ArrayToXml::convert([
             "test" => [
                 "_cdata" => "test"
             ]]);
@@ -54,6 +54,7 @@ class Index extends Admin
             ->addTopButton('add')
             ->addStatic('today', '今日注册数量', "", $num1)
             ->addStatic('today', '全部注册数量', "", $num2)
+            ->addStatic('arr', 'arr', "", $arr)
             ->hideBtn('submit,back')
             ->fetch();
     }
