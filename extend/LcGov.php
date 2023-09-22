@@ -10,7 +10,7 @@ class LcGov
     private $url2 = "153.177:901";
     private $path = "/Convergence/webservice/ConvergenceService?wsdl";
 
-    const 推送表 = "WEB612";
+    public const 推送表 = "WEB612";
     const 题库 = "WEB611";
     const 文章内容 = "WEB610";
     const 做题记录 = "WEB609";
@@ -26,6 +26,9 @@ class LcGov
         return $this->url1 . $this->url2 . $this->path;
     }
 
+
+    private string $guid;
+
     public function Login(): string
     {
         $userid = SystemParamModel::where("key", "userid")->value("val");
@@ -36,6 +39,7 @@ class LcGov
         ];
         $client = new SoapClient($this->url());
         $ret = $client->LoginByAccount($array);
+        $this->guid = $ret->return;
         return $ret->return;
     }
 
