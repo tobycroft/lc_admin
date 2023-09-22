@@ -24,7 +24,7 @@ class LcGov
             "password" => $password
         ];
         $client = new SoapClient($this->url());
-        print_r($client->__getFcuntions());
+        print_r($client->LoginByAccount($userid, $password));
     }
 
 }
