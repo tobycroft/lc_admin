@@ -13,5 +13,9 @@ class LcGov
         return $this->url1 + $this->url2 + $this->path;
     }
 
+    public function Login()
+    {
+
+    }
 
 }
