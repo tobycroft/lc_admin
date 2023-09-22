@@ -45,7 +45,9 @@ class LcGov
 
     public function pushXml($guid, $xml)
     {
-
+        if (empty($this->guid)) {
+            $this->Login();
+        }
     }
 
 }
