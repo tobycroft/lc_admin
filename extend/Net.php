@@ -95,10 +95,4 @@ class Net
         return $result;
     }
 
-    public static function Soap_wsdl($wsdl)
-    {
-        return new SoapClient($wsdl);
-    }
-
-
 }
