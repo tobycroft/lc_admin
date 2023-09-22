@@ -26,6 +26,7 @@ class LcGov
         $client = new SoapClient($this->url());
         $ret = $client->LoginByAccount($array);
         echo $ret["return"];
+        
     }
 
 }
