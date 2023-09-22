@@ -28,4 +28,9 @@ class LcGov
         return $ret->return;
     }
 
+    public function PushXml($array)
+    {
+
+    }
+
 }
