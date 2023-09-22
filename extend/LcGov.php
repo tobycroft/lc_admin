@@ -17,8 +17,8 @@ class LcGov
 
     public function Login()
     {
-        $userid = SystemParamModel::where("userid")->value("val");
-        $password = SystemParamModel::where("password")->value("val");
+        $userid = SystemParamModel::where("key", "userid")->value("val");
+        $password = SystemParamModel::where("key", "password")->value("val");
         $array = [
             "userid" => $userid,
             "password" => $password
