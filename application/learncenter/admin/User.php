@@ -7,6 +7,7 @@ use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\learncenter\model\UserModel;
 use LcGov;
+use Spatie\ArrayToXml\ArrayToXml;
 use think\Db;
 use think\facade\Hook;
 use util\Tree;
@@ -21,7 +22,10 @@ class User extends Admin
     public function upload()
     {
         $lc = new LcGov();
-        return $lc->Login();
+        $arr = [
+            "row"
+        ];
+        ArrayToXml::convert($arr);
     }
 
 
