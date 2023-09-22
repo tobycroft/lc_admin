@@ -15,7 +15,7 @@ class LcGov
         return $this->url1 . $this->url2 . $this->path;
     }
 
-    public function Login()
+    public function Login(): string
     {
         $userid = SystemParamModel::where("key", "userid")->value("val");
         $password = SystemParamModel::where("key", "password")->value("val");
@@ -26,7 +26,7 @@ class LcGov
         $client = new SoapClient($this->url());
         $ret = $client->LoginByAccount($array);
         echo $ret["return"];
-        
+        return $ret["return"];
     }
 
 }
