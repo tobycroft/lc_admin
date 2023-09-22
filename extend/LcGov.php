@@ -27,7 +27,7 @@ class LcGov
         $xml = ArrayToXml::convert($array);
         $client = new SoapClient($this->url());
         $guid = $client->LoginByAccount($array);
-        echo $guid
+        echo $guid;
     }
 
 }
