@@ -43,7 +43,7 @@ class Index extends Admin
             'title' => '用户地址',
             'icon' => 'fa fa-fw fa-key',
 //            'class' => 'btn btn-xs btn-default ajax-get',
-            'href' => url('user_address/index', ['search_field' => 'uid', 'keyword' => '__id__'])
+            'href' => url('upload'),
         ];
 
         $arr = ArrayToXml::convert([
@@ -51,7 +51,7 @@ class Index extends Admin
                 "_cdata" => "test"
             ]]);
         return ZBuilder::make('form')
-            ->addButton($btn_access)
+            ->addButton("btn", $btn_access)
             ->addStatic('today', '今日注册数量', "", $num1)
             ->addStatic('today', '全部注册数量', "", $num2)
             ->addStatic('arr', 'arr', "", $arr)
