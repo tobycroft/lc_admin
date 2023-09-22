@@ -25,7 +25,7 @@ class LcGov
             "password" => $password
         ];
         $xml = ArrayToXml::convert($array);
-        return Net::PostBinary($this->url(), $xml);
+        return Net::Soap_wsdl($this->url());
     }
 
 }
