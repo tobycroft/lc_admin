@@ -24,8 +24,8 @@ class LcGov
             "password" => $password
         ];
         $client = new SoapClient($this->url());
-        $guid = $client->LoginByAccount($array);
-        echo json_encode($guid, 320);
+        $ret = $client->LoginByAccount($array);
+        echo $ret["return"];
     }
 
 }
