@@ -12,4 +12,5 @@ return array(
     'think\\' => array($vendorDir . '/topthink/think-image/src'),
     'app\\' => array($baseDir . '/application'),
     'Tobycroft\\AossSdk\\' => array($vendorDir . '/tobycroft/aoss-sdk/src'),
+    'Spatie\\ArrayToXml\\' => array($vendorDir . '/spatie/array-to-xml/src'),
 );
