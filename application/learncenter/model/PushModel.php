@@ -6,6 +6,6 @@ use think\Model;
 
 class PushModel extends Model
 {
-    protected $table = 'lc_gift';
+    protected $table = 'lc_push';
 
 }
