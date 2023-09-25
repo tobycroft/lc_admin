@@ -78,6 +78,9 @@ class LcGov
         return $this;
     }
 
+    /**
+     * @throws DOMException
+     */
     public function toXml()
     {
         $data = new ArrayToXml($this->xml_array, 'table');
