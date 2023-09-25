@@ -23,8 +23,9 @@ class User extends Admin
     {
         $lc = new LcGov();
         $arr = [
-            "row:type" => [
-                "id" => ["_cdata" => []]
+            "row" => [
+                "id" => ["_cdata" => []],
+                "_attributes" => "add",
             ],
 
         ];
