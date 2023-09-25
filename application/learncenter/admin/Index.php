@@ -45,12 +45,14 @@ class Index extends Admin
 //            'class' => 'btn btn-xs btn-default ajax-get',
             'href' => url('upload'),
         ];
-        $push_num = PushModel::group("uid")->count();
+        $push_num = PushModel::count();
+        $push_user = PushModel::group("uid")->count();
         return ZBuilder::make('form')
             ->addButton("btn", $btn_access)
             ->addStatic('today', '今日注册数量', "", $num1)
             ->addStatic('today', '全部注册数量', "", $num2)
             ->addStatic('总推送数', '总推送数', "", $push_num)
+            ->addStatic('总推送人数', '总推送人数', "", $push_user)
             ->hideBtn('submit,back')
             ->fetch();
     }
