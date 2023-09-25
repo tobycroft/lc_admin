@@ -25,7 +25,7 @@ class User extends Admin
         $arr = [
             "row" => [
 //                "id" => ["_cdata" => []],
-                "_attributes" => "add",
+//                "_attributes" => "add",
             ],
 
         ];
