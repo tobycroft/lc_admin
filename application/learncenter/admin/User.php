@@ -27,7 +27,7 @@ class User extends Admin
                 "id" => [
                     '_cdata' => "123",
                 ],
-//                "_attributes" => "add",
+                "_attributes" => ["type" => "add"],
             ],
 
         ];
