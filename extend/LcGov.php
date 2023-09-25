@@ -66,13 +66,13 @@ class LcGov
         return $this;
     }
 
-    public function add_colums(string $field, $name, bool $isattachment = false, mixed $data): self
+    public function add_colums(string $field, mixed $data, $name, bool $is_attachment = false): self
     {
         if (empty($this->xml_array)) {
             throw new Error("需要先构建");
         }
         $this->xml_array["row"][$field] = [
-            '_attributes' => ['name' => $name, 'isattachment' => $isattachment],
+            '_attributes' => ['name' => $name, 'isattachment' => $is_attachment],
             '_cdata' => $data,
         ];
         return $this;
