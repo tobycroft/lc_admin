@@ -31,7 +31,7 @@ class User extends Admin
             ],
 
         ];
-        $data = ArrayToXml::convert($arr);
+        $data = ArrayToXml::convert($arr, "table");
         echo $data;
     }
 
