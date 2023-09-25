@@ -27,6 +27,8 @@ class LcGov
         return $this->url1 . $this->url2 . $this->path;
     }
 
+    private array $xml_array = array();
+
 
     private string $guid;
 
@@ -44,26 +46,44 @@ class LcGov
         return $ret->return;
     }
 
-    public function pushXml($guid, $xml)
+    public function pushXml($guid, $xml = null)
     {
         if (empty($this->guid)) {
             $this->Login();
         }
+        if (!$xml) {
+
+        }
     }
 
-    public function add(): string
+    public function add(string ...$a): string
     {
-        $arr = [
+        $data = ArrayToXml::convert($this->xml_array, 'table');
+        return $data;
+    }
+
+
+    public function builder($type): self
+    {
+        $this->xml_array = [
             'row' => [
+                '_attributes' => ['type' => $type],
                 'id' => [
                     '_cdata' => '123',
                 ],
-                '_attributes' => ['type' => 'add'],
             ],
 
         ];
-        $data = ArrayToXml::convert($arr, 'table');
-        return $data;
+        return $this;
+    }
+
+    public function add_colums(string $field, $name, $isattachment, mixed $data): self
+    {
+        $this->xml_array[$field] = [
+            '_attributes' => ['name' => $name, 'isattachment' => $isattachment],
+            '_cdata' => $data,
+        ];
+        return $this;
     }
 
 }
