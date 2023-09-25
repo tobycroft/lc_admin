@@ -23,7 +23,9 @@ class User extends Admin
     {
         $lc = new LcGov();
         $arr = [
-            "row:type" => [],
+            "row:type" => [
+                "id" => ["_cdata" => []]
+            ],
 
         ];
         $data = ArrayToXml::convert($arr);
