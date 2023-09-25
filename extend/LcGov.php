@@ -83,8 +83,8 @@ class LcGov
      */
     public function toXml()
     {
-        $data = new ArrayToXml($this->xml_array, 'table', false, false, null, null, null, ['formatOutput' => true]);
-//        $data->setDomProperties(["formatOutput" => false]);
+        $data = new ArrayToXml($this->xml_array, 'table', false, false);
+//        $data->setDomProperties(["formatOutput" => true]);
         return $data->toXml();
     }
 
