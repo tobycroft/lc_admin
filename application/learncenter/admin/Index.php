@@ -9,6 +9,7 @@ use app\learncenter\model\PushModel;
 use app\learncenter\model\UserModel;
 use think\Db;
 use think\facade\Hook;
+use think\helper\Time;
 use util\Tree;
 
 
@@ -46,7 +47,10 @@ class Index extends Admin
             'href' => url('upload'),
         ];
         $push_num = PushModel::count();
-        $push_user = PushModel::group("uid")->count();
+        $push_user = PushModel::group('uid')->count();
+
+        $push_num_month = PushModel::where("date", ">=", Time::month())->count();
+        $push_user_month = PushModel::where('date', '>=', Time::month())->group('uid')->count();
         return ZBuilder::make('form')
             ->addButton("btn", $btn_access)
             ->addStatic('today', '今日注册数量', "", $num1)
