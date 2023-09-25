@@ -5,8 +5,8 @@ namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
+use app\learncenter\model\PushModel;
 use app\learncenter\model\UserModel;
-use Spatie\ArrayToXml\ArrayToXml;
 use think\Db;
 use think\facade\Hook;
 use util\Tree;
@@ -45,16 +45,12 @@ class Index extends Admin
 //            'class' => 'btn btn-xs btn-default ajax-get',
             'href' => url('upload'),
         ];
-
-        $arr = ArrayToXml::convert([
-            "test" => [
-                "_cdata" => "test"
-            ]]);
+        $push_num = PushModel::group("uid")->count();
         return ZBuilder::make('form')
             ->addButton("btn", $btn_access)
             ->addStatic('today', '今日注册数量', "", $num1)
             ->addStatic('today', '全部注册数量', "", $num2)
-            ->addStatic('arr', 'arr', "", $arr)
+            ->addStatic('总推送数', '总推送数', "", $push_num)
             ->hideBtn('submit,back')
             ->fetch();
     }
