@@ -72,7 +72,6 @@ class LcGov
                     '_cdata' => '123',
                 ],
             ],
-
         ];
         return $this;
     }
@@ -82,7 +81,7 @@ class LcGov
         if (empty($this->xml_array)) {
             throw new Error("需要先构建");
         }
-        $this->xml_array[$field] = [
+        $this->xml_array["row"][$field] = [
             '_attributes' => ['name' => $name, 'isattachment' => $isattachment],
             '_cdata' => $data,
         ];
