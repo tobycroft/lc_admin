@@ -80,7 +80,6 @@ class LcGov
 
     public function toXml()
     {
-        $data = ArrayToXml::convert($this->xml_array, 'table');
         $data = new ArrayToXml($this->xml_array, 'table');
         $data->setDomProperties(["formatOutput" => true]);
         return $data->toXml();
