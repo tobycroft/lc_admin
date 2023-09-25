@@ -39,7 +39,7 @@ class Index extends Admin
 
         $num1 = UserModel::where("date", ">", $todaytime)
             ->count();
-        $num3 = UserModel::where("date", ">=", date('y-m-d', Time::lastMonth()[0]))
+        $num3 = UserModel::where("date", ">=", date('y-m-d', Time::lastMonth()[1]))
             ->count();
         $num2 = UserModel::count();
         $btn_access = [
@@ -51,8 +51,8 @@ class Index extends Admin
         $push_num = PushModel::count();
         $push_user = PushModel::group('uid')->count();
 
-        $push_num_month = PushModel::where("date", ">=", date("y-m-d", Time::lastMonth()[0]))->count();
-        $push_user_month = PushModel::where('date', '>=', date('y-m-d', Time::lastMonth()[0]))->group('uid')->count();
+        $push_num_month = PushModel::where("date", ">=", date("y-m-d", Time::lastMonth()[1]))->count();
+        $push_user_month = PushModel::where('date', '>=', date('y-m-d', Time::lastMonth()[1]))->group('uid')->count();
         return ZBuilder::make('form')
             ->addButton("btn", $btn_access)
             ->addStatic('today', '今日注册数量', "", $num1)
