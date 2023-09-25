@@ -21,16 +21,9 @@ class User extends Admin
     public function upload()
     {
         $lc = new LcGov();
-        $arr = [
-            "row" => [
-                "id" => [
-                    '_cdata' => "123",
-                ],
-                "_attributes" => ["type" => "add"],
-            ],
-
-        ];
-        return $lc->add();
+        $xml = $lc->builder("add")
+            ->add_colums("id", "内容", false, "");
+        return $xml;
     }
 
 
