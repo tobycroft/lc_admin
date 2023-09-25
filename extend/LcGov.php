@@ -2,6 +2,7 @@
 
 
 use app\learncenter\model\SystemParamModel;
+use Spatie\ArrayToXml\ArrayToXml;
 
 class LcGov
 {
@@ -48,6 +49,21 @@ class LcGov
         if (empty($this->guid)) {
             $this->Login();
         }
+    }
+
+    public function add(): string
+    {
+        $arr = [
+            'row' => [
+                'id' => [
+                    '_cdata' => '123',
+                ],
+                '_attributes' => ['type' => 'add'],
+            ],
+
+        ];
+        $data = ArrayToXml::convert($arr, 'table');
+        return $data;
     }
 
 }
