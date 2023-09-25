@@ -39,6 +39,8 @@ class Index extends Admin
 
         $num1 = UserModel::where("date", ">", $todaytime)
             ->count();
+        $num3 = UserModel::where("date", ">=", date('y-m-d', Time::lastMonth()[0]))
+            ->count();
         $num2 = UserModel::count();
         $btn_access = [
             'title' => '用户地址',
@@ -54,6 +56,7 @@ class Index extends Admin
         return ZBuilder::make('form')
             ->addButton("btn", $btn_access)
             ->addStatic('today', '今日注册数量', "", $num1)
+            ->addStatic('today', '本月注册数量', "", $num3)
             ->addStatic('today', '全部注册数量', "", $num2)
             ->addStatic('总推送次数', '总推送次数', "", $push_num)
             ->addStatic('总参与学习的人数', '总参与学习的人数', "", $push_user)
