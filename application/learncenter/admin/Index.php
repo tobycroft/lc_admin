@@ -57,6 +57,8 @@ class Index extends Admin
             ->addStatic('today', '全部注册数量', "", $num2)
             ->addStatic('总推送次数', '总推送次数', "", $push_num)
             ->addStatic('总参与学习的人数', '总参与学习的人数', "", $push_user)
+            ->addStatic('本月推送次数', '本月推送次数', "", $push_num_month)
+            ->addStatic('本月推送人数', '本月推送人数', "", $push_user_month)
             ->hideBtn('submit,back')
             ->fetch();
     }
