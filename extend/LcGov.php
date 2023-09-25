@@ -56,21 +56,11 @@ class LcGov
         }
     }
 
-    public function add(string ...$a): string
-    {
-        $data = ArrayToXml::convert($this->xml_array, 'table');
-        return $data;
-    }
-
-
     public function builder($type): self
     {
         $this->xml_array = [
             'row' => [
                 '_attributes' => ['type' => $type],
-                'id' => [
-                    '_cdata' => '123',
-                ],
             ],
         ];
         return $this;
@@ -86,6 +76,12 @@ class LcGov
             '_cdata' => $data,
         ];
         return $this;
+    }
+
+    public function toXml()
+    {
+        $data = ArrayToXml::convert($this->xml_array, 'table');
+        return $data;
     }
 
 }
