@@ -32,7 +32,7 @@ class User extends Admin
 
         ];
         $data = ArrayToXml::convert($arr);
-        return $data;
+        echo $data;
     }
 
 
