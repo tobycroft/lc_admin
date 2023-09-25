@@ -85,7 +85,7 @@ class LcGov
     {
         $data = new ArrayToXml($this->xml_array, 'table', false, "UTF-8");
         $data->setDomProperties(["formatOutput" => true]);
-        return $data->toXml();
+        return $data->toDom();
     }
 
 }
