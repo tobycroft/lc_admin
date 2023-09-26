@@ -57,8 +57,7 @@ class LcGov
         $this->xml = $this->toXml();
         $client = new SoapClient($this->url());
         $ret = $client->pushXml($this->guid, $catalogid, $this->xml);
-        var_dump($ret);
-        return $ret;
+        return $ret->return;
     }
 
     public function builder($type): self
