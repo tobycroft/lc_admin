@@ -80,6 +80,10 @@ class LcGov
         return $this;
     }
 
+    public function toArray()
+    {
+        return $this->xml_arrays;
+    }
 
     public function toXml()
     {
