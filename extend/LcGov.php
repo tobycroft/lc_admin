@@ -55,12 +55,15 @@ class LcGov
     {
         $this->Login();
         var_dump($this->guid);
-        $this->xml = $this->toXml();
+        $this->toXml();
         $array = [
             'guid' => $this->guid,
             'catalogid' => $catalogid,
             'xmlstr' => $this->xml
         ];
+        echo "\n";
+        echo $this->xml;
+        echo "\n";
         $ret = $this->client->pushXml($array);
         var_dump($ret);
         return $ret->return;
