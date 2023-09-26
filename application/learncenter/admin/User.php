@@ -21,7 +21,15 @@ class User extends Admin
     public function upload()
     {
         $p = new Push();
-        echo json_encode($p->timu(), 320);
+        $p->timu();
+        $p->liwubiao();
+        $p->tiku();
+        $p->zuotijilu();
+        $p->yonghuxinxi();
+        $p->yonghubiao();
+        $p->wenzhangneirong();
+        $p->tuisong();
+        $p->liwujilu();
     }
 
 

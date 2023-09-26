@@ -67,7 +67,9 @@ class LcGov
 //        echo "\n";
         $ret = $this->client->pushXml($array);
 //        var_dump($ret);
-        return XmlToArray::convert($ret->return)["Response"];
+        $resp = XmlToArray::convert($ret->return)["Response"];
+        json_encode($resp, 320);
+        return $resp;
     }
 
     public function builder($type): self
