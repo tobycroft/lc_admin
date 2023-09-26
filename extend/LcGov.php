@@ -59,7 +59,7 @@ class LcGov
         var_dump($this->guid);
         $this->xml = $this->toXml();
 //        $this->client = new SoapClient($this->url());
-        $ret = $this->client->pushXml($this->guid, $catalogid, $this->xml);
+        $ret = $this->client->pushXmls($this->guid, $catalogid, $this->xml);
         var_dump($ret);
         return $ret->return;
     }
