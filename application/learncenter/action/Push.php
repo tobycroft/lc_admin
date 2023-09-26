@@ -83,6 +83,7 @@ class Push
                 ->add_colums('quiz_id', $data['quiz_id'], "题库id")
                 ->add_colums('qs_id', $data['qs_id'], '题目id');
         }
+        echo "\n" . __FUNCTION__;
         return $xml->pushXml(LcGov::礼物记录);
     }
 
@@ -99,6 +100,7 @@ class Push
                 ->add_colums('wx_name', $data['wx_name'], '姓名')
                 ->add_colums('wx_img', $data['wx_img'], '头像');
         }
+        echo "\n" . __FUNCTION__;
         return $xml->pushXml(LcGov::用户表);
     }
 
@@ -123,6 +125,7 @@ class Push
                 ->add_colums('street', $data['street'], '街道')
                 ->add_colums('address', $data['address'], '地址');
         }
+        echo "\n" . __FUNCTION__;
         return $xml->pushXml(LcGov::用户信息);
     }
 
@@ -140,6 +143,7 @@ class Push
                 ->add_colums('url', $data['url'], '音频文件地址')
                 ->add_colums('content', $data['content'], '内容');
         }
+        echo "\n" . __FUNCTION__;
         return $xml->pushXml(LcGov::文章内容);
     }
 
@@ -155,6 +159,7 @@ class Push
                 ->add_colums('discription', $data['discription'], '简介')
                 ->add_colums('img', $data['img'], '背景图');
         }
+        echo "\n" . __FUNCTION__;
         return $xml->pushXml(LcGov::题库);
     }
 
@@ -168,6 +173,7 @@ class Push
                 ->add_colums('article_id', $data['article_id'], '文章id')
                 ->add_colums('uid', $data['uid'], '用户id');
         }
+        echo "\n" . __FUNCTION__;
         return $xml->pushXml(LcGov::推送表);
     }
 
@@ -185,6 +191,7 @@ class Push
                 ->add_colums('is_correct', $data['is_correct'], '是否正确')
                 ->add_colums('gift_id', $data['gift_id'], '礼物id');
         }
+        echo "\n" . __FUNCTION__;
         return $xml->pushXml(LcGov::做题记录);
     }
 
