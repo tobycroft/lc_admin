@@ -54,9 +54,7 @@ class LcGov
         if (empty($this->guid)) {
             $this->Login();
         }
-        if (!$this->xml) {
-            $this->toXml();
-        }
+        $this->xml = $this->toXml();
         $client = new SoapClient($this->url());
         $ret = $client->pushXml($this->guid, $catalogid, $this->toXml());
         var_dump($ret);
@@ -103,8 +101,8 @@ class LcGov
         $this->done();
         $data = new ArrayToXml($this->xml_arrays, 'table', true, "UTF-8");
         $data->setDomProperties(["formatOutput" => true]);
-        $this->xml = $data->toXml();
-        return $this->xml;
+        return $data->toXml();
+//        return $this->xml;
     }
 
 }
