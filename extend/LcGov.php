@@ -28,7 +28,7 @@ class LcGov
     }
 
     private array $xml_array = array();
-    private array $xml_arrays = array();
+    private array $xml_arrays = ['row' => []];
 
 
     private string $guid;
@@ -60,12 +60,10 @@ class LcGov
     public function builder($type): self
     {
         if (!empty($this->xml_array)) {
-            $this->xml_arrays[] = $this->xml_array;
+            $this->xml_arrays['row'][] = $this->xml_array;
         }
         $this->xml_array = [
-            'row' => [
-                '_attributes' => ['type' => $type],
-            ],
+            '_attributes' => ['type' => $type]
         ];
         return $this;
     }
@@ -75,7 +73,7 @@ class LcGov
         if (empty($this->xml_array)) {
             throw new Error("需要先构建");
         }
-        $this->xml_array["row"][$field] = [
+        $this->xml_array[$field] = [
             '_attributes' => ['name' => $name, 'isattachment' => $is_attachment],
             '_cdata' => $data,
         ];

@@ -6,7 +6,6 @@ namespace app\learncenter\admin;
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\learncenter\model\UserModel;
-use Spatie\ArrayToXml\ArrayToXml;
 use think\Db;
 use think\facade\Hook;
 use util\Tree;
@@ -20,18 +19,12 @@ class User extends Admin
 
     public function upload()
     {
-//        $lc = new LcGov();
-//        $xml = $lc->builder("add")
-//            ->add_colums("id", "内容", false, "")
-//            ->add_colums("quiz_id", "文章id", false, "")
-//            ->toXml();
-//        return $xml;
-        return ArrayToXml::convert([
-            "row" => [
-                ['_attributes' => ['type' => 'add'], "id" => ['_attributes' => ['name' => "abc", 'isattachment' => true], '_cdata' => "data"]],
-                ["id" => ['_attributes' => ['name' => "abc", 'isattachment' => true], '_cdata' => "data"]],
-            ]
-        ]);
+        $lc = new LcGov();
+        $xml = $lc->builder("add")
+            ->add_colums("id", "内容", false, "")
+            ->add_colums("quiz_id", "文章id", false, "")
+            ->toXml();
+        return $xml;
     }
 
 
