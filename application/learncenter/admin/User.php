@@ -20,6 +20,7 @@ class User extends Admin
 
     public function upload()
     {
+
         $lc = new LcGov();
         $xml = $lc->builder("add")
             ->add_colums("id", "内容", false, "")
