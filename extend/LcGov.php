@@ -82,6 +82,10 @@ class LcGov
 
     public function toArray()
     {
+        if (!empty($this->xml_array)) {
+            $this->xml_arrays[] = $this->xml_array;
+            $this->xml_array = [];
+        }
         return $this->xml_arrays;
     }
 
