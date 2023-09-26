@@ -32,7 +32,7 @@ class Push
                 ->add_colums("c", $data["C"], "选项c")
                 ->add_colums("d", $data["D"], "选项d");
         }
-        echo "\n" . __FUNCTION__
+        echo "\n" . __FUNCTION__;
         return $xml->pushXml(LcGov::题目);
     }
 
@@ -51,7 +51,7 @@ class Push
                 ->add_colums('img', $data['img'], "背景（无用）")
                 ->add_colums('show_type', $data['show_type'], "展示模式（0未设定1原版综合多重结构文章混排2ps类似音频+文章内容3孕期周刊v14新生儿周刊v15备孕周刊v1）");
         }
-        echo "\n" . __FUNCTION__
+        echo "\n" . __FUNCTION__;
         return $xml->pushXml(LcGov::文章);
     }
 
@@ -67,7 +67,7 @@ class Push
                 ->add_colums("type", $data["type"], "类型（'common'|'other'）")
                 ->add_colums("num", $data["num"], "礼物余量");
         }
-        echo "\n" . __FUNCTION__
+        echo "\n" . __FUNCTION__;
         return $xml->pushXml(LcGov::礼物表);
     }
 
