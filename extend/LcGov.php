@@ -80,13 +80,13 @@ class LcGov
         return $this;
     }
 
-    public function toArray()
+    public function toString()
     {
         if (!empty($this->xml_array)) {
             $this->xml_arrays[] = $this->xml_array;
             $this->xml_array = [];
         }
-        return $this->xml_arrays;
+        return json_encode($this->xml_arrays, 320);
     }
 
     public function toXml()
