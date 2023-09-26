@@ -30,7 +30,7 @@ class LcGov
     private array $xml_array = array();
     private array $xml_arrays = ['row' => []];
 
-    private string $xml = "";
+    private string $xml;
 
     private string $guid;
 
