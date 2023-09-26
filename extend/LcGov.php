@@ -99,7 +99,7 @@ class LcGov
         }
     }
 
-    public function toXml()
+    public function toXml(): string
     {
         $this->done();
         $data = new ArrayToXml($this->xml_arrays, 'table', true, "UTF-8");
