@@ -106,8 +106,8 @@ class LcGov
         $this->done();
         $data = new ArrayToXml($this->xml_arrays, 'table', true, "UTF-8");
         $data->setDomProperties(["formatOutput" => true]);
-        return $data->toXml();
-//        return $this->xml;
+        $this->xml = $data->toXml();
+        return $this->xml;
     }
 
 }
