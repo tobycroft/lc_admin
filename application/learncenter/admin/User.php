@@ -23,12 +23,12 @@ class User extends Admin
 
         $lc = new LcGov();
         $xml = $lc->builder("add")
-            ->add_colums("id", "内容", false, "")
-            ->add_colums("quiz_id", "文章id", false, "")
+            ->add_colums("id", "", "内容",)
+            ->add_colums("quiz_id", "", "文章id",)
             ->builder('add')
-            ->add_colums('id', '内容2', false, '')
-            ->add_colums('quiz_id2', '文章id2', false, '')
-            ->add_colums('quiz_id3', '文章id2', false, '')
+            ->add_colums('id', '', "内容2",)
+            ->add_colums('quiz_id2', '', "文章id2",)
+            ->add_colums('quiz_id3', '文章id2', "文章id2",)
             ->toXml();
         return $xml;
     }
