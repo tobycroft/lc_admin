@@ -21,7 +21,7 @@ class User extends Admin
     public function upload()
     {
         $p = new Push();
-        return $p->timu();
+        echo $p->timu();
     }
 
 
