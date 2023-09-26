@@ -28,8 +28,8 @@ class User extends Admin
 //        return $xml;
         return ArrayToXml::convert([
             "row" => [
-                ["id" => ['_attributes' => ['name' => "abc", 'isattachment' => true], '_cdata' => "data"]]
-                ["id" => ['_attributes' => ['name' => "abc", 'isattachment' => true], '_cdata' => "data"]]
+                ["id" => ['_attributes' => ['name' => "abc", 'isattachment' => true], '_cdata' => "data"]],
+                ["id" => ['_attributes' => ['name' => "abc", 'isattachment' => true], '_cdata' => "data"]],
             ]
         ]);
     }
