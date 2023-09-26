@@ -5,8 +5,8 @@ namespace app\learncenter\admin;
 
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
+use app\learncenter\action\Push;
 use app\learncenter\model\UserModel;
-use LcGov;
 use think\Db;
 use think\facade\Hook;
 use util\Tree;
@@ -20,17 +20,8 @@ class User extends Admin
 
     public function upload()
     {
-
-        $lc = new LcGov();
-        $xml = $lc->builder("add")
-            ->add_colums("id", "", "内容",)
-            ->add_colums("quiz_id", "", "文章id",)
-            ->builder('add')
-            ->add_colums('id', '', "内容2",)
-            ->add_colums('quiz_id2', '', "文章id2",)
-            ->add_colums('quiz_id3', '文章id2', "文章id2",)
-            ->toXml();
-        return $xml;
+        $p = new Push();
+        return $p->timu();
     }
 
 
