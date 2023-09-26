@@ -55,8 +55,8 @@ class LcGov
     {
         $this->Login();
         var_dump($this->guid);
-        $this->xml = $this->toXml();
-        $ret = $this->client->pushXml($this->guid, $catalogid, $this->xml);
+//        $this->xml = $this->toXml();
+        $ret = $this->client->pushXml($this->guid, "", "");
         var_dump($ret);
         return $ret->return;
     }
