@@ -34,6 +34,8 @@ class LcGov
 
     private string $guid;
 
+    private SoapClient $client;
+
     public function Login(): string
     {
         $userid = SystemParamModel::where("key", "userid")->value("val");
@@ -42,8 +44,8 @@ class LcGov
             "userid" => $userid,
             "password" => $password
         ];
-        $client = new SoapClient($this->url());
-        $ret = $client->LoginByAccount($array);
+        $this->client = new SoapClient($this->url());
+        $ret = $this->client->LoginByAccount($array);
         $this->guid = $ret->return;
         return $ret->return;
     }
@@ -56,8 +58,8 @@ class LcGov
         }
         var_dump($this->guid);
         $this->xml = $this->toXml();
-        $client = new SoapClient($this->url());
-        $ret = $client->pushXml($this->guid, $catalogid, $this->xml);
+        $this->client = new SoapClient($this->url());
+        $ret = $this->client->pushXml($this->guid, $catalogid, "");
         var_dump($ret);
         return $ret->return;
     }
