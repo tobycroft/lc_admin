@@ -25,7 +25,8 @@
       "ext-curl": "*",
       "tobycroft/aoss-sdk": "^1.0",
       "spatie/array-to-xml": "^3.2",
-      "ext-soap": "*"
+      "ext-soap": "*",
+      "vyuldashev/xml-to-array": "^1.1"
     },
     "autoload": {
         "psr-4": {

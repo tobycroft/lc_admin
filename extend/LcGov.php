@@ -66,6 +66,7 @@ class LcGov
 //        echo "\n";
         $ret = $this->client->pushXml($array);
 //        var_dump($ret);
+
         return $ret->return;
     }
 

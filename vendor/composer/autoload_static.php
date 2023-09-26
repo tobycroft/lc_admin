@@ -24,6 +24,10 @@ class ComposerStaticInitea24a8d88377c9cd0962665edfe67ce8
         array (
             'app\\' => 4,
         ),
+        'V' => 
+        array (
+            'Vyuldashev\\XmlToArray\\' => 22,
+        ),
         'T' => 
         array (
             'Tobycroft\\AossSdk\\' => 18,
@@ -54,6 +58,10 @@ class ComposerStaticInitea24a8d88377c9cd0962665edfe67ce8
         'app\\' => 
         array (
             0 => __DIR__ . '/../..' . '/application',
+        ),
+        'Vyuldashev\\XmlToArray\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vyuldashev/xml-to-array/src',
         ),
         'Tobycroft\\AossSdk\\' => 
         array (

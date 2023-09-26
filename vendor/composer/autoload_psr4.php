@@ -11,6 +11,7 @@ return array(
     'think\\captcha\\' => array($vendorDir . '/topthink/think-captcha/src'),
     'think\\' => array($vendorDir . '/topthink/think-image/src'),
     'app\\' => array($baseDir . '/application'),
+    'Vyuldashev\\XmlToArray\\' => array($vendorDir . '/vyuldashev/xml-to-array/src'),
     'Tobycroft\\AossSdk\\' => array($vendorDir . '/tobycroft/aoss-sdk/src'),
     'Spatie\\ArrayToXml\\' => array($vendorDir . '/spatie/array-to-xml/src'),
 );
