@@ -27,12 +27,11 @@ class User extends Admin
 //            ->toXml();
 //        return $xml;
         return ArrayToXml::convert([
-            "row" => [
-                '_attributes' => 'add',
                 ["id" => ['_attributes' => ['name' => "abc", 'isattachment' => true], '_cdata' => "data"]],
                 ["id" => ['_attributes' => ['name' => "abc", 'isattachment' => true], '_cdata' => "data"]],
+            
             ]
-        ]);
+        );
     }
 
 
