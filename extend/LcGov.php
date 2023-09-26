@@ -65,7 +65,7 @@ class LcGov
         ];
         $ret = $this->client->pushXml($array);
         $resp = XmlToArray::convert($ret->return)["Response"];
-        json_encode($resp, 320);
+        echo json_encode($resp, 320);
         return $resp;
     }
 
