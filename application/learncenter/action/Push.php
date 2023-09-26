@@ -48,7 +48,7 @@ class Push
                 ->add_colums('to_day', $data['to_day'], "结束天")
                 ->add_colums('title', $data['title'], "标题")
                 ->add_colums('img', $data['img'], "背景（无用）")
-                ->add_colums('show_type', $data['show_type'], "展示模式（0未设定1原版综合多重结构文章混排2ps类似音频+文章内容3孕期周刊v14新生儿周刊v15备孕周刊v1）")
+                ->add_colums('show_type', $data['show_type'], "展示模式（0未设定1原版综合多重结构文章混排2ps类似音频+文章内容3孕期周刊v14新生儿周刊v15备孕周刊v1）");
         }
         $xml->pushXml(LcGov::文章);
     }
