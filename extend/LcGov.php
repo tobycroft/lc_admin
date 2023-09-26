@@ -58,17 +58,12 @@ class LcGov
         if (empty($this->guid)) {
             $this->Login();
         }
-//        var_dump($this->guid);
         $array = [
             'guid' => $this->guid,
             'catalogid' => $catalogid,
             'xmlstr' => $this->xml
         ];
-//        echo "\n";
-//        echo $this->xml;
-//        echo "\n";
         $ret = $this->client->pushXml($array);
-//        var_dump($ret);
         $resp = XmlToArray::convert($ret->return)["Response"];
         json_encode($resp, 320);
         return $resp;
