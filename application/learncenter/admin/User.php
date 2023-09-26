@@ -7,6 +7,7 @@ use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\learncenter\model\UserModel;
 use LcGov;
+use Spatie\ArrayToXml\ArrayToXml;
 use think\Db;
 use think\facade\Hook;
 use util\Tree;
@@ -26,6 +27,12 @@ class User extends Admin
             ->add_colums("quiz_id", "文章id", false, "")
             ->toXml();
         return $xml;
+        return ArrayToXml::convert([
+            "row" => [
+                ["_attributes" => "add", ["id" => ['_attributes' => ['name' => "abc", 'isattachment' => true],
+                    '_cdata' => "data"]]]
+            ]
+        ]);
     }
 
 
