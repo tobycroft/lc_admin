@@ -53,9 +53,7 @@ class LcGov
 
     public function pushXml($catalogid)
     {
-        if (empty($this->guid)) {
-            $this->Login();
-        }
+        $this->Login();
         var_dump($this->guid);
         $this->xml = $this->toXml();
 //        $this->client = new SoapClient($this->url());
