@@ -83,7 +83,7 @@ class LcGov
     public function toString()
     {
         if (!empty($this->xml_array)) {
-            $this->xml_arrays['row'] = $this->xml_array;
+            $this->xml_arrays['row'][] = $this->xml_array;
             $this->xml_array = [];
         }
         return json_encode($this->xml_arrays, 320);
