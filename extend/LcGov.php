@@ -28,6 +28,7 @@ class LcGov
     }
 
     private array $xml_array = array();
+    private array $xml_arrays = array();
 
 
     private string $guid;
@@ -58,6 +59,9 @@ class LcGov
 
     public function builder($type): self
     {
+        if (!empty($this->xml_array)) {
+            $this->xml_arrays[] = $this->xml_array;
+        }
         $this->xml_array = [
             'row' => [
                 '_attributes' => ['type' => $type],
@@ -78,9 +82,10 @@ class LcGov
         return $this;
     }
 
+
     public function toXml()
     {
-        $data = new ArrayToXml($this->xml_array, 'table', true, "UTF-8");
+        $data = new ArrayToXml($this->xml_arrays, 'table', true, "UTF-8");
         $data->setDomProperties(["formatOutput" => true]);
         return $data->toXml();
     }
