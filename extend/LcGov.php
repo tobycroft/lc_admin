@@ -59,9 +59,7 @@ class LcGov
 
     public function builder($type): self
     {
-        if (!empty($this->xml_array)) {
-            $this->xml_arrays['row'][] = $this->xml_array;
-        }
+        $this->done();
         $this->xml_array = [
             '_attributes' => ['type' => $type]
         ];
@@ -82,19 +80,22 @@ class LcGov
 
     public function toString()
     {
-        if (!empty($this->xml_array)) {
-            $this->xml_arrays['row'][] = $this->xml_array;
-            $this->xml_array = [];
-        }
+        $this->done();
         return json_encode($this->xml_arrays, 320);
     }
 
-    public function toXml()
+    private function done()
     {
         if (!empty($this->xml_array)) {
             $this->xml_arrays['row'][] = $this->xml_array;
             $this->xml_array = [];
         }
+    }
+
+    public function toXml()
+    {
+        $this->done();
+
         $data = new ArrayToXml($this->xml_arrays, 'table', true, "UTF-8");
         $data->setDomProperties(["formatOutput" => true]);
         return $data->toXml();
