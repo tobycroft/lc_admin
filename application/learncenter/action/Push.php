@@ -22,7 +22,6 @@ class Push
                 ->add_colums("b", $data["B"], "选项b")
                 ->add_colums("c", $data["C"], "选项c")
                 ->add_colums("d", $data["D"], "选项d");
-
         }
         $xml->toXml();
         return $xml->toXml();
