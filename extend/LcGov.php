@@ -54,7 +54,9 @@ class LcGov
 
     public function pushXml($catalogid)
     {
-        $this->Login();
+        if (empty($this->guid)) {
+            $this->Login();
+        }
 //        var_dump($this->guid);
         $this->toXml();
         $array = [
