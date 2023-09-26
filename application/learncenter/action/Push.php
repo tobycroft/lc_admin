@@ -18,10 +18,10 @@ class Push
                 ->add_colums("title", $data["title"], "")
                 ->add_colums("content", $data["content"], "")
                 ->add_colums("correct", $data["correct"], "")
-                ->add_colums("a", $data["a"], "")
-                ->add_colums("b", $data["b"], "")
-                ->add_colums("c", $data["c"], "")
-                ->add_colums("d", $data["d"], "");
+                ->add_colums("a", $data["A"], "")
+                ->add_colums("b", $data["B"], "")
+                ->add_colums("c", $data["C"], "")
+                ->add_colums("d", $data["D"], "");
 
         }
         $xml->toXml();
