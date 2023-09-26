@@ -23,6 +23,9 @@ class User extends Admin
         $xml = $lc->builder("add")
             ->add_colums("id", "内容", false, "")
             ->add_colums("quiz_id", "文章id", false, "")
+            ->builder('add')
+            ->add_colums('id', '内容2', false, '')
+            ->add_colums('quiz_id', '文章id2', false, '')
             ->toXml();
         return $xml;
     }
