@@ -54,9 +54,14 @@ class LcGov
     public function pushXml($catalogid)
     {
         $this->Login();
-//        var_dump($this->guid);
-//        $this->xml = $this->toXml();
-        $ret = $this->client->pushXml($this->guid, "", "", "");
+        var_dump($this->guid);
+        $this->xml = $this->toXml();
+        $array = [
+            'guid' => $this->guid,
+            'catalogid' => $catalogid,
+            'xmlstr' => $this->xml
+        ];
+        $ret = $this->client->pushXml($array);
         var_dump($ret);
         return $ret->return;
     }
