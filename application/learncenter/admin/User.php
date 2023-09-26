@@ -22,11 +22,11 @@ class User extends Admin
     public function upload()
     {
         $lc = new LcGov();
-        $xml = $lc->builder("add")
-            ->add_colums("id", "内容", false, "")
-            ->add_colums("quiz_id", "文章id", false, "")
-            ->toXml();
-        return $xml;
+//        $xml = $lc->builder("add")
+//            ->add_colums("id", "内容", false, "")
+//            ->add_colums("quiz_id", "文章id", false, "")
+//            ->toXml();
+//        return $xml;
         return ArrayToXml::convert([
             "row" => [
                 ["_attributes" => "add", ["id" => ['_attributes' => ['name' => "abc", 'isattachment' => true],
