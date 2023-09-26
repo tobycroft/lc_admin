@@ -85,7 +85,7 @@ class LcGov
         }
         $this->xml_array[$field] = [
             '_attributes' => ['name' => $name, 'isattachment' => $is_attachment],
-            '_cdata' => $data,
+            '_cdata' => strval($data),
         ];
         return $this;
     }
