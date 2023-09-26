@@ -3,6 +3,7 @@
 
 use app\learncenter\model\SystemParamModel;
 use Spatie\ArrayToXml\ArrayToXml;
+use Vyuldashev\XmlToArray\XmlToArray;
 
 class LcGov
 {
@@ -66,7 +67,7 @@ class LcGov
 //        echo "\n";
         $ret = $this->client->pushXml($array);
 //        var_dump($ret);
-        return $ret->return;
+        return XmlToArray::convert($ret->return)["Response"];
     }
 
     public function builder($type): self

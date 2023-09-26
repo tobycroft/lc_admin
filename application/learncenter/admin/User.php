@@ -21,7 +21,7 @@ class User extends Admin
     public function upload()
     {
         $p = new Push();
-        echo($p->timu());
+        echo json_encode($p->timu(), 320);
     }
 
 
