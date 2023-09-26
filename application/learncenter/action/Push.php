@@ -23,8 +23,7 @@ class Push
                 ->add_colums("c", $data["C"], "选项c")
                 ->add_colums("d", $data["D"], "选项d");
         }
-        return $xml->toXml();
-
+        $xml->pushXml(\LcGov::题目);
     }
 
 

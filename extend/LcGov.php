@@ -30,6 +30,7 @@ class LcGov
     private array $xml_array = array();
     private array $xml_arrays = ['row' => []];
 
+    private string $xml;
 
     private string $guid;
 
@@ -47,14 +48,19 @@ class LcGov
         return $ret->return;
     }
 
-    public function pushXml($guid, $xml = null)
+
+    public function pushXml($catalogid)
     {
         if (empty($this->guid)) {
             $this->Login();
         }
-        if (!$xml) {
-
+        if (!$this->xml) {
+            $this->toXml();
         }
+        $client = new SoapClient($this->url());
+        $ret = $client->pushXml($this->guid, $catalogid, $this->toXml());
+        var_dump($ret);
+        return $ret;
     }
 
     public function builder($type): self
@@ -95,10 +101,10 @@ class LcGov
     public function toXml()
     {
         $this->done();
-
         $data = new ArrayToXml($this->xml_arrays, 'table', true, "UTF-8");
         $data->setDomProperties(["formatOutput" => true]);
-        return $data->toXml();
+        $this->xml = $data->toXml();
+        return $this->xml;
     }
 
 }
