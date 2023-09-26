@@ -92,7 +92,7 @@ class LcGov
     public function toXml()
     {
         if (!empty($this->xml_array)) {
-            $this->xml_arrays[] = $this->xml_array;
+            $this->xml_arrays['row'][] = $this->xml_array;
             $this->xml_array = [];
         }
         $data = new ArrayToXml($this->xml_arrays, 'table', true, "UTF-8");
