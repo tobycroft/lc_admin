@@ -32,7 +32,7 @@ class Push
                 ->add_colums("c", $data["C"], "选项c")
                 ->add_colums("d", $data["D"], "选项d");
         }
-        $xml->pushXml(LcGov::题目);
+        return $xml->pushXml(LcGov::题目);
     }
 
 
@@ -50,7 +50,7 @@ class Push
                 ->add_colums('img', $data['img'], "背景（无用）")
                 ->add_colums('show_type', $data['show_type'], "展示模式（0未设定1原版综合多重结构文章混排2ps类似音频+文章内容3孕期周刊v14新生儿周刊v15备孕周刊v1）");
         }
-        $xml->pushXml(LcGov::文章);
+        return $xml->pushXml(LcGov::文章);
     }
 
     public function liwubiao()
@@ -65,7 +65,7 @@ class Push
                 ->add_colums("type", $data["type"], "类型（'common'|'other'）")
                 ->add_colums("num", $data["num"], "礼物余量");
         }
-        $xml->pushXml(LcGov::礼物表);
+        return $xml->pushXml(LcGov::礼物表);
     }
 
     public function liwujilu()
@@ -80,7 +80,7 @@ class Push
                 ->add_colums('quiz_id', $data['quiz_id'], "题库id")
                 ->add_colums('qs_id', $data['qs_id'], '题目id');
         }
-        $xml->pushXml(LcGov::礼物记录);
+        return $xml->pushXml(LcGov::礼物记录);
     }
 
     public function yonghubiao()
@@ -96,7 +96,7 @@ class Push
                 ->add_colums('wx_name', $data['wx_name'], '姓名')
                 ->add_colums('wx_img', $data['wx_img'], '头像');
         }
-        $xml->pushXml(LcGov::用户表);
+        return $xml->pushXml(LcGov::用户表);
     }
 
     public function yonghuxinxi()
@@ -120,7 +120,7 @@ class Push
                 ->add_colums('street', $data['street'], '街道')
                 ->add_colums('address', $data['address'], '地址');
         }
-        $xml->pushXml(LcGov::用户信息);
+        return $xml->pushXml(LcGov::用户信息);
     }
 
     public function wenzhangneirong()
@@ -137,7 +137,7 @@ class Push
                 ->add_colums('url', $data['url'], '音频文件地址')
                 ->add_colums('content', $data['content'], '内容');
         }
-        $xml->pushXml(LcGov::文章内容);
+        return $xml->pushXml(LcGov::文章内容);
     }
 
     public function tiku()
@@ -152,7 +152,7 @@ class Push
                 ->add_colums('discription', $data['discription'], '简介')
                 ->add_colums('img', $data['img'], '背景图');
         }
-        $xml->pushXml(LcGov::题库);
+        return $xml->pushXml(LcGov::题库);
     }
 
     public function tuisong()
@@ -165,7 +165,7 @@ class Push
                 ->add_colums('article_id', $data['article_id'], '文章id')
                 ->add_colums('uid', $data['uid'], '用户id');
         }
-        $xml->pushXml(LcGov::推送表);
+        return $xml->pushXml(LcGov::推送表);
     }
 
     public function zuotijilu()
@@ -182,7 +182,7 @@ class Push
                 ->add_colums('is_correct', $data['is_correct'], '是否正确')
                 ->add_colums('gift_id', $data['gift_id'], '礼物id');
         }
-        $xml->pushXml(LcGov::做题记录);
+        return $xml->pushXml(LcGov::做题记录);
     }
 
 }
