@@ -54,6 +54,7 @@ class LcGov
         if (empty($this->guid)) {
             $this->Login();
         }
+        var_dump($this->guid);
         $this->xml = $this->toXml();
         $client = new SoapClient($this->url());
         $ret = $client->pushXml($this->guid, $catalogid, $this->xml);
