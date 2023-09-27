@@ -107,6 +107,7 @@ class LcGov
     public function toXml(): string
     {
         $this->done();
+        $this->xml_arrays['row'] = [];
         $data = new ArrayToXml($this->xml_arrays, 'table', true, "UTF-8");
         $data->setDomProperties(["formatOutput" => true]);
         $this->xml = $data->toXml();
