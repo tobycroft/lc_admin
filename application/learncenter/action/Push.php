@@ -165,7 +165,7 @@ class Push
                     ->add_colums('id', $data['id'], '记录id')
                     ->add_colums('title', $data['title'], '标题')
                     ->add_colums('content', $data['content'], '内容')
-                    ->add_colums('discription', $data['discription'], '简介')
+                    ->add_colums('description', $data['discription'], '简介')
                     ->add_colums('img', $data['img'], '背景图');
             }
             $this->xml->pushXml(LcGov::题库);
