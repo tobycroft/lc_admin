@@ -29,20 +29,19 @@ class Push
         echo "\n" . __FUNCTION__;
         QuizQsModel::chunk(500, function ($datas) {
             foreach ($datas as $data) {
-                echo json_encode($data, 320);
-//                $this->xml->builder('add')
-//                    ->add_colums('id', $data['id'], '内容id')
-//                    ->add_colums('quiz_id', $data['quiz_id'], '文章id')
-//                    ->add_colums('tag', $data['tag'], '文章小标签')
-//                    ->add_colums('title', $data['title'], '题目')
-//                    ->add_colums('content', $data['content'], '内容')
-//                    ->add_colums('correct', $data['correct'], '正确选项')
-//                    ->add_colums('a', $data['A'], '选项a')
-//                    ->add_colums('b', $data['B'], '选项b')
-//                    ->add_colums('c', $data['C'], '选项c')
-//                    ->add_colums('d', $data['D'], '选项d');
-//                $this->xml->pushXml(LcGov::题目);
+                $this->xml->builder('add')
+                    ->add_colums('id', $data['id'], '内容id')
+                    ->add_colums('quiz_id', $data['quiz_id'], '文章id')
+                    ->add_colums('tag', $data['tag'], '文章小标签')
+                    ->add_colums('title', $data['title'], '题目')
+                    ->add_colums('content', $data['content'], '内容')
+                    ->add_colums('correct', $data['correct'], '正确选项')
+                    ->add_colums('a', $data['A'], '选项a')
+                    ->add_colums('b', $data['B'], '选项b')
+                    ->add_colums('c', $data['C'], '选项c')
+                    ->add_colums('d', $data['D'], '选项d');
             }
+            $this->xml->pushXml(LcGov::题目);
         });
     }
 
