@@ -88,7 +88,7 @@ class Push
             foreach ($datas as $data) {
                 $this->xml->builder('add')
                     ->add_colums('id', $data['id'], '记录id')
-                    ->add_colums('img', $data['img'], '用户id')
+                    ->add_colums('uid', $data['uid'], '用户id')
                     ->add_colums('gift_id', $data['gift_id'], '礼物id')
                     ->add_colums('quiz_id', $data['quiz_id'], '题库id')
                     ->add_colums('qs_id', $data['qs_id'], '题目id');
