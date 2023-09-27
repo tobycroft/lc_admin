@@ -22,14 +22,14 @@ class User extends Admin
     {
         $p = new Push();
         $p->timu();
-//        $p->liwubiao();
-//        $p->tiku();
-//        $p->zuotijilu();
-//        $p->yonghuxinxi();
-//        $p->yonghubiao();
-//        $p->wenzhangneirong();
-//        $p->tuisong();
-//        $p->liwujilu();
+        $p->liwubiao();
+        $p->tiku();
+        $p->zuotijilu();
+        $p->yonghuxinxi();
+        $p->yonghubiao();
+        $p->wenzhangneirong();
+        $p->tuisong();
+        $p->liwujilu();
     }
 
 
