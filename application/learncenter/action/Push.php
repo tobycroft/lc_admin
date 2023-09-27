@@ -7,6 +7,7 @@ use app\learncenter\model\ArticleModel;
 use app\learncenter\model\GiftModel;
 use app\learncenter\model\GiftRecordModel;
 use app\learncenter\model\PushModel;
+use app\learncenter\model\QuizModel;
 use app\learncenter\model\QuizQsModel;
 use app\learncenter\model\QuizRecordModel;
 use app\learncenter\model\UserInfoModel;
@@ -159,13 +160,13 @@ class Push
     public function tiku()
     {
         echo "\n" . __FUNCTION__;
-        QuizQsModel::chunk(500, function ($datas) {
+        QuizModel::chunk(500, function ($datas) {
             foreach ($datas as $data) {
                 $this->xml->builder('add')
                     ->add_colums('id', $data['id'], '记录id')
                     ->add_colums('title', $data['title'], '标题')
                     ->add_colums('content', $data['content'], '内容')
-                    ->add_colums('description', $data['discription'], '简介')
+                    ->add_colums('discription', $data['discription'], '简介')
                     ->add_colums('img', $data['img'], '背景图');
             }
             $this->xml->pushXml(LcGov::题库);
