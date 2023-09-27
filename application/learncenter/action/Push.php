@@ -29,7 +29,7 @@ class Push
         echo "\n" . __FUNCTION__;
         QuizQsModel::chunk(500, function ($datas) {
             foreach ($datas as $data) {
-                echo json_encode($datas, 320);
+                echo json_encode($data, 320);
 //                $this->xml->builder('add')
 //                    ->add_colums('id', $data['id'], '内容id')
 //                    ->add_colums('quiz_id', $data['quiz_id'], '文章id')
